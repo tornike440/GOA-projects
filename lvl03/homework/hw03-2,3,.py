@@ -1,3 +1,9 @@
+
+
+#2) შექმენით რამდენიმე ცვლადი სადაც შეინახავთ თქვენს შესახებ ინფორმაციას
+# 3) გამოიტანეატ ტერმინალში თქვენს შესახებ იფნორმაცის ცვლადების დახმარებით ერთ გრძელ წინადადებად
+# 4) კომენტარებით ახსენით თუ როგორ ვქმნით ცვლადს და რა არის მისი დანიშნუ
+
 #this variable contains my name and surname
 a ="tornike beridze."
 
@@ -27,4 +33,24 @@ g ="good deeds:got my father running, got my brother in the gym,build small base
 
 print("little bit of informations about me."+a+b+c+d+m+n+k+l+g)
 
+#vairable is a box with something inside it and with it's own name,while it is not nessecery to them being related it is recomended
+
 #variable's name is written on the left hand side of equal sign, while its value is written on the other side of it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

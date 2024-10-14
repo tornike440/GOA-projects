@@ -1,6 +1,6 @@
 from turtle import *
 speed(17)
-color("dark gray")
+color("#e3dcc2")
 begin_fill()
 forward(50)
 circle(20,extent=120)
@@ -43,8 +43,8 @@ circle(20,extent=120)
 end_fill()
 left(60)
 
-color("gray")
-
+color("#B6B09A")
+width(4)
 penup()
 goto(-37,9)
 pendown()
@@ -78,13 +78,8 @@ right(20)
 penup()
 goto(21,9)
 pendown()
-circle(200,extent=20)
+circle(200,extent=16)
 
-right(20)
-penup()
-goto(30,9)
-pendown()
-circle(200,extent=13)
 
 right(15)
 penup()
