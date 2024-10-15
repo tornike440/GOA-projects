@@ -48,6 +48,16 @@ print(a-b)
 print(a*b)
 #it will multiply oeachother
 
+
+
+
+
+
+
+
+
+
+
 print(a/b)
 
 
