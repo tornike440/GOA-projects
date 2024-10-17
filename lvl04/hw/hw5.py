@@ -5,7 +5,7 @@ name="tornike"
 
 surname="beridze"
 
-print(name + surname)
+print(name +" "+ surname)
 
 
 #////////////////////////////////////or
@@ -14,7 +14,7 @@ name1 ="Tornike"
 
 surname1="Beridze"
 
-full_name = name1 + surname1
+full_name = name1 +" "+ surname1
 
 
 print(full_name)
