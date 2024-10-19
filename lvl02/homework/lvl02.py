@@ -13,7 +13,9 @@ forward(200)
 left(90)
 forward(150)
 
-#1st tower
+
+
+#1st tower(triangle)
 right(90)
 forward(30)
 left(120)

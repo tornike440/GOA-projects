@@ -137,6 +137,9 @@ pendown()
 forward(45)
 right(90)
 
+
+
+
 penup()
 goto(65,132)
 pendown()
