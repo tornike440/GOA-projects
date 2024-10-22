@@ -10,5 +10,5 @@ gmail=  input("gmail: ")
 
 print("so, with the information you gave me, your name is " + name
        +"; your surname is "+ surname +
-      "; you are "+age+"years old, you live in"
-        + address +"and you mail is"+ gmail)
+      "; you are "+age+"years old, you live in "
+        + address +" and you mail is "+ gmail)
