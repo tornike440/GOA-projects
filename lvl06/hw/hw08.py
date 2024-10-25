@@ -8,7 +8,6 @@ a= input("do you have wifi? ")
 while a not in ["yes", "no"]:
     print("please, answer with 'yes' and 'no'")
     a= input("do you have wifi? ")
-    continue
 
 
 if a == "no":
@@ -23,7 +22,6 @@ b= input("do you have board games? ")
 while b not in ["yes", "no"]:
     print("please, answer with 'yes' and 'no'")
     b= input("do you have board games? ")
-    continue
 
 
 if a == "no":
