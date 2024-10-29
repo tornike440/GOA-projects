@@ -24,7 +24,7 @@ while b not in ["yes", "no"]:
     b= input("do you have board games? ")
 
 
-if a == "no":
+if b == "no":
     have_board_games = False
 else:
     have_board_games = True
