@@ -12,7 +12,7 @@ b= "so, yo're " + name +", it's nice to get to know you, my name is " + gpt
 c= "hi " + name + ", I'm" + gpt
 
 d="hi boss, how you doing?, my name is " + gpt
-ran= random.choice[a,b,c,d]
+ran= random.choice([a,b,c,d])
 
 
 print(ran)

@@ -6,28 +6,28 @@ a= input("do you have wifi? ")
 
 
 while a not in ["yes", "no"]:
-    print("please, answer with 'yes' and 'no'")
-    a= input("do you have wifi? ")
+     print("please, answer with 'yes' and 'no'")
+     a= input("do you have wifi? ")
 
 
 if a == "no":
-    have_internet = False
+     have_internet = False
 else:
-    have_internet = True
+     have_internet = True
     
 
 
 b= input("do you have board games? ")
 
 while b not in ["yes", "no"]:
-    print("please, answer with 'yes' and 'no'")
-    b= input("do you have board games? ")
+     print("please, answer with 'yes' and 'no'")
+     b= input("do you have board games? ")
 
 
 if b == "no":
-    have_board_games = False
+     have_board_games = False
 else:
-    have_board_games = True
+     have_board_games = True
     
 
 
@@ -43,3 +43,5 @@ if  have_internet and not  have_board_games:
 
 if  not have_internet and have_board_games:
     print("well you have something to have fun with!")
+
+
