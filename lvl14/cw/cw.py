@@ -18,3 +18,7 @@ print(a>b or c<d)
 print(a>=b and c<=d)
 
 print(a>=b or c<=d)
+
+
+#ინდენტაცია--კიდედან დაშორება
+
