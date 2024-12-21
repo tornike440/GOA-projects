@@ -1,6 +1,6 @@
 #6)დაბეჭდე რიცხვები 1-დან 30-მდე, და გვერდით მიუწერე "ლუწია" თუ "კენტია".
 for i in range(0,30):
     if i %2==0:
-        print(f"{i}even")
+        print(str(i)+"even")
     else:
-        print(f"{i}odd")
+        print(str(i)+"odd")

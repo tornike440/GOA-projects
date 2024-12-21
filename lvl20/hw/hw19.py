@@ -4,8 +4,6 @@
 a=int(input("num"))
 
 
-while a>=3:
+while a >= 3 and a <= 10:
     print(a)
     a +=1
-    if a>10:
-        break
