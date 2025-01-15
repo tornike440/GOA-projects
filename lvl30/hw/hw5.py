@@ -2,9 +2,6 @@
 list=[]
 
 for i in range (0,5):
-    num=input("num: ")
-    try:
-        num/6
-    except:
-        print("please enter integer")
+    num=int(input("num: "))
     list.append(num)
+print(list[:])
