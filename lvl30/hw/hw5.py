@@ -4,4 +4,4 @@ list=[]
 for i in range (0,5):
     num=int(input("num: "))
     list.append(num)
-print(list[:])
+print(list)

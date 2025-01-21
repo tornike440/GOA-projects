@@ -2,4 +2,4 @@
 list=[1,2,3,4,5,6,7,8,9,10]
 #print(f"{list[0::2]} kenti,{list[1::2]} luwi")
 for i in range(0,10,2):
-    print(f"{list[i]} kenti,{list[i+1]} luwi")
+    print(str(list[i])+"kenti, "+str(list[i+1])+"luwi,")

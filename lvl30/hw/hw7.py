@@ -46,11 +46,11 @@ while True:
         answer= input("")
         while answer not in groceries:
             print("unfortunalty we dont have it right now: here is what we have at the moment, please choose from this")
-            print(groceries[:])
+            print(groceries)
             print("what is your product of choice")
             answer= input("")
         bucket.append(answer)
-        print(f"added '{answer}' in the bucket list")
+        print(f"added'{answer}' in the bucket list")
     else:
         print("would you like to cashout or leave?")
         ans= input("")
@@ -62,10 +62,15 @@ while True:
             print("BYE")
             break
         else:
+            print("here is your bucket list")
+            print(bucket)
             card_number=int(input("input card number"))
             cvc= int(input("input your cvc"))
             exp_date= int(input("input your exparation date"))
-            print("thanks for shoppint with us")
+            print("confirm?")
+            answerr= input("")
+            if answerr=="yes" or answerr=="y":
+                print("thanks for shopping with us")
             print("BYE")
             break
 
