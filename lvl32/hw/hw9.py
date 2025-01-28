@@ -111,27 +111,27 @@ while a not in ["register","guest mode"]:
 
 
 gmail="you have not entered your mail bro"
-b=gmail[::-1]
-c=b[:10]
+#b=gmail[::-1]
+c=gmail[-10:]
 
 
 if a == "register":
     gmail= input("at this moment we only supprot gmail. please enter your gmail")
-    b=gmail[::-1]
-    c=b[:10]
-    while c !="moc.liamg@":
+    #b=gmail[::-1]
+    c=gmail[-10:]
+    while c !="@gmail.com":
         print("please enter valid gmail")
         gmail= input("at this moment we only supprot gmail. please enter your gmail")
-        b=gmail[::-1]
-        c=b[:10]
+        #b=gmail[::-1]
+        c=gmail[-10:]
 
     passw=input("Please create new password.at the end of it include some sort of symbol")
-    b=passw[::-1]
-    d=b[:1]
+    #b=passw[::-1]
+    d=passw[-1:]
     while d not in ["!","@","#","$","%","^","&","*"]:
         passw=input("Please create new password.at the end of it include some sort of symbol")
-        b=passw[::-1]
-        c=b[:1]
+        #b=passw[::-1]
+        d=passw[-1:]
     rpassw=input("re-enter your password")
     while rpassw != passw:
         rpassw=input("re-enter your password")
@@ -168,7 +168,7 @@ while True:
                 print("would you like to cashout or leave?")
                 ans= input("")
             if ans =="cashout":
-                while c !="moc.liamg@":
+                while c !="@gmail.com":
                     print("you have to register first to cashout sir!")
                     gmail= input("at this moment we only supprot gmail. please enter your gmail")
                     b=gmail[::-1]
