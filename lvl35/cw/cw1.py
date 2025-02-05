@@ -26,3 +26,32 @@ multiply(num1,num2)
 
 devide(num1,num2)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
