@@ -186,7 +186,7 @@ while True:
                         passw=input("Please create new password.at the end of it include some sort of symbol")
                         b=passw[::-1]
                         c=b[:1]
-                        rpassw=input("re-enter your password")
+                    rpassw=input("re-enter your password")
                     while rpassw != passw:
                         rpassw=input("re-enter your password")
                 
