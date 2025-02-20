@@ -10,6 +10,7 @@ def upperit(a):
             answer.append(a[i].lower())
             flag=1
         #If the character is not an alphabet letter, leave it unchanged and reset the flag to 1.
+        #.isalpha() is a python function that checks if the character is an alphabet letter
         if a[i].isalpha() == False:
             flag=1
 
