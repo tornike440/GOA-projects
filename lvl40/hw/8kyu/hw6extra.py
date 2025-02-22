@@ -2,7 +2,7 @@ def numbers_with_digit_inside(x, d):
     numbers_list = []
     
     for i in range(1, x + 1):
-        if str(d) in str(i):
+        if str(d) == str(i): 
             numbers_list.append(i)
     
     return_list = []
