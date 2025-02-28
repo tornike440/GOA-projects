@@ -16,30 +16,8 @@
 #     print(b)
 # elif ans=="kenti":
 #     print(c)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# else:
+#     print("dabewdo")
 
 a=int(input("num:"))
 
