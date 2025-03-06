@@ -1,0 +1,19 @@
+button{
+    padding: 20px;
+}
+
+p{
+    margin: 30px;
+}
+
+.box{
+    border :5px solid rgb(255, 0, 0);
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.center{
+    border: 2px solid black;
+    text-align: center;
+}
