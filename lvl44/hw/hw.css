@@ -1,0 +1,15 @@
+/* in reality there is 3 types of css files, but mostly only one is used */
+/*other two are: inlined and internal */
+/* which is written in the html file */
+/*internal css is written in the head tag in style */
+/*inlined css is written in the the line of the html tag */
+/*inlined css has the highest priority */
+/*internal css has the second highest priority */
+/*external css has the lowest priority */
+/*if there is a conflict between the css files, the one with the highest priority will be used */
+/*in this case, the external css file is used */
+/* this one is called external css file */
+/* it is written in a separate file */
+/* it is linked to the html file */
+/* it is written in the head tag */
+/* it is written in the link tag */

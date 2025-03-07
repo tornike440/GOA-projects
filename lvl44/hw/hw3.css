@@ -1,0 +1,29 @@
+h1,h2{
+    color: blue;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.pysical{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.skills{
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.content{
+    display: block;
+    border: 30px solid rgb(255, 0, 0);
+    margin: 0 auto;
+    width: 250px;
+}
+p{
+    color: red;
+    font-size: 50px;
+    text-align: center;
+}
