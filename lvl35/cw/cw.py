@@ -1,12 +1,8 @@
-import random
-
-list=[]
-
-for i in range (0,10):
-    list.append(random.randint(0,100))
-
-sum=0
-
-for i in range (0,len(list)):
-    sum=sum+list[i]
-print(sum)
+def mouth_size(animal): 
+    if animal.upper()== "ALLIGATOR":
+        return "small"
+    else:
+        return "wide"
+    
+print(mouth_size("toucan")) # wide
+print(mouth_size("alligator")) # wide
