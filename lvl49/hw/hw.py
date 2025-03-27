@@ -39,9 +39,17 @@
 #         return False
 
 
-def find_smallest_int(arr):
-    answer =arr[0]
-    for i in range(0,len(arr)):
-        if arr[i] < answer:
-            answer = arr[i]
-    return answer
+# def find_smallest_int(arr):
+#     answer =arr[0]
+#     for i in range(0,len(arr)):
+#         if arr[i] < answer:
+#             answer = arr[i]
+#     return answer
+
+# we are trying to pop every element that occurs in list b from list a, even if it is repeated
+def remove_elements(a, b):
+    list=[]
+    for i in range(0,len(a)):
+        if a[i] not in b:
+            list.append(a[i])
+            b.remove(a[i])
