@@ -5,30 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .main{
-            width: 400px;
-            height: 400px;
-            border: black solid 2px;
+        header {
+          position: fixed;
+          top: 0px;
+          left: 0;
+          width: 100%;
+          height: 60px;
+          background-color: #969696;
+          color: rgb(81, 81, 81);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          z-index: 10;
         }
-        .blue{
-            width: 50px;
-            height: 50px;
-            background: blue;
-            position: relative;
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          background-color: #414141;
         }
-        .red{
-            width: 50px;
-            height: 50px;
-            background: red;
-            position: absolute;
-            left: 20px;
+    
+        
+        .profile {
+          position: relative;
+          background-color: #939393;
+          padding: 20px;
+          margin: 20px;
+          top: 50px;
+
+          border-radius: 10px;
+          width: 300px;
         }
-    </style>
+    
+        .profile img {
+          width: 10%;
+          border-radius: 50%;
+        }
+    
+        .badge {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          background-color: red;
+          color: white;
+          padding: 5px 10px;
+          border-radius: 50%;
+          font-weight: bold;
+        }
+        .content {
+          position: static;
+          background-color: #58ff58;
+          padding: 20px;
+          margin: 20px;
+          font-size: 18px;
+          border-radius: 15px;
+        }
+        .contact {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background-color: #ff0000;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+          text-decoration: solid;
+        
+        }
+        #down {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background-color: #969696;
+          color: rgb(81, 81, 81);
+          text-align: center;
+          padding: 10px;
+          z-index: 15;
+        }
+        button{
+          background-color: #ff6b6b;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 2px;
+          border: 5px solid #000000;
+          cursor: pointer;
+        }
+        .sidemenu {
+          position: relative;
+          background-color: #00bbff;
+          padding: 20px;
+          width: 20%;
+          height: 100vh;
+          margin: 20px;
+          top: none ;
+          left: 70%;
+          border-radius: 10px;
+          font-size: 18px;
+
+        }
+        ul {
+          background-color: antiquewhite;
+          border-radius: 15%;
+        }
+        li {
+          margin: 10px;
+        }
+
+        a {
+          text-decoration: none;
+          color: black;
+          font-size: larger;
+        }
+      </style>
 </head>
 <body>
-    <div class="main">
-        <div class="blue"></div>
-        <div class="red"></div>
+
+    <header>
+      my profile
+      <button class="contact"><a href="https://www.instagram.com/tornike.beridze.1213/">📞contact</a></button>
+    </header>
+  
+  
+    <div class="profile">
+      <div class="badge">1</div>
+      <img src="/lvl52/Screenshot 2025-04-07 003101.png" alt="პროფილის ფოტო">
+      <h2>tornike beridze</h2>
+      <p>მე ვარ ვებ დეველოპერი,  მე ვფლობ  html css  და pythonsს</p>
     </div>
-</body>
-</html>
+  
+    <div class="content">
+      <p>
+        ეს არის სტატიკური ტექსტის აბზაცი
+      </p>
+    </div>
+
+    <div id="down">
+      <p>
+        @2025 tornike beridze <br>
+        tokab98887@gmail.com
+      </p>
+    </div>
+
+    <div class="sidemenu">
+      
+      <ul>
+        <p>contacts</p>
+        <li><a href="https://www.instagram.com/tornike.beridze.1213/"><button>instagram</button></a></li>
+        <li><a href="https://www.facebook.com/tornike.beridze.1213"><button>facebook</button></a></li>
+        <li><button>📞555 99 41 59</button></li>
+      </ul>
+    </div>
+
+  
+  </body>
