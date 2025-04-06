@@ -1,0 +1,200 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: darkslategray;
+}
+/* Contact and About Us Sections */
+.contactpeek {
+    position: relative;
+    width: 30%;
+    height: 50px;
+    left: 30%;
+    margin: 20px auto; /* Center the sections and add spacing */
+    background-color: rgb(0, 133, 249);
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    overflow: hidden; /* Ensures content doesn't overflow the button */
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+}
+
+.contactpeek:hover {
+    height: 250px; /* Lengthens the button when hovered */
+    background-color: rgb(0, 100, 200); /* Optional: Change background color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for emphasis */
+}
+
+.contactpeek a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: aqua;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.contactpeek a:hover {
+    background-color: lightblue;
+}
+
+.contactpeek .hidden-text {
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Prevents interaction when hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+}
+
+.contactpeek:hover .hidden-text {
+    opacity: 1; /* Becomes visible on hover */
+    visibility: visible;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(65, 65, 65);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav button {
+    background-color: aqua;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+nav button a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#menu-icon {
+    background-color: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+/* Side Menu */
+#side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Smooth slide-in effect */
+    z-index: 2000;
+}
+
+#side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#side-menu ul li {
+    margin: 20px 0;
+}
+
+#side-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+#close-menu {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Main Content */
+#content {
+    margin-top: 60px; /* To avoid content being hidden under the fixed nav */
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+/* Large Hover Section */
+.large-hover-section {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(0, 133, 249);
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.large-hover-section:hover {
+    width: 500px;
+    height: 300px;
+    background-color: rgb(0, 100, 200);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.large-hover-section a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: aqua;
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.large-hover-section a:hover {
+    background-color: lightblue;
+}
+
+.large-hover-section .hidden-text {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+}
+
+.large-hover-section:hover .hidden-text {
+    opacity: 1;
+    visibility: visible;
+}
