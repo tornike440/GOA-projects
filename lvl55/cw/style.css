@@ -1,0 +1,44 @@
+body{
+    background-color: #ff5050;
+    color: antiquewhite;
+    font-family: cursive;
+}
+.travel{
+    background-image: url('image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 15px;
+    text-align: center;
+
+}
+button{
+    background-color: #520000;
+    color: antiquewhite;
+    border-radius: 15px;
+    border: 1px solid #520000;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.about{
+    width: 350px;
+    height: 500px;
+    padding: 20px;
+    background-color: hsla(228, 100%, 50%, 0.397);
+    border-radius: 15px;
+
+
+}
+.trips{
+    width: 40%;
+    height: auto;
+    padding: 20px;
+    background-color: hsla(90, 100%, 50%, 0.397);
+    border-radius: 15px;
+    top: 15%;
+    left: 30%;
+     
+
+
+}
+
