@@ -1,0 +1,56 @@
+body{
+    background-color: #f94f4fb2;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+header{
+    background-color: #525252;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(47, 255, 0);
+    border-radius: 10px;
+
+}
+.america{
+
+    background-image: url('/lvl55/hw/newyork.png');
+    background-color: rgba(253, 253, 127, 0.705);
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    color: aquamarine;
+    padding: 20px;
+    margin-inline: 20px;
+}
+
+.china{
+
+    background-image: url('/lvl55/hw/beijing.png');
+    background-color: rgba(253, 253, 127, 0.705);
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    color: aquamarine;
+    padding: 20px;
+    margin-inline: 20px;
+}
+.georgia{
+
+    background-image: url('/lvl55/hw/tbilisi.png');
+    background-color: rgba(253, 253, 127, 0.705);
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    color: aquamarine;
+    padding: 20px;
+    margin-inline: 20px;
+}
+
+
