@@ -1,0 +1,64 @@
+.body{
+    background-color: burlywood;
+    align-items: right;
+    justify-content: center;
+}
+
+.button1{
+    background-color: #4CAF50;
+    border-radius: 5%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.button1:hover{
+    transform: scale(1.1);
+    background-color: #00ff0d;
+    color: white;
+    border-radius: 5%;
+    padding: 15px 32px;
+}
+
+
+.button1{
+    background-color: #00ff08;
+    border-radius: 15%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font: 100;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1:hover{
+    transform: scale(1.1);
+    background-color: #00ff0d;
+    color: white;
+    border-radius: 5%;
+    padding: 15px 32px;
+}
+
+
+.button2{
+    background-color: #0015ff;
+    border-radius: 5%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
