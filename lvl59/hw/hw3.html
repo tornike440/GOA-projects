@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('/lvl59/hw/ChatGPT Image Apr 29, 2025, 09_38_03 PM.png'); /* Replace with your ChatGPT wallpaper image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .loading-container {
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 300px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 0 auto 10px;
+        }
+
+        .progress {
+            width: 0%; 
+            height: 100%;
+            background-color: #00ff00;
+            transition: width 10s ease-in-out;
+        }
+
+        .progress-bar:hover .progress {
+            width: 100%; 
+        }
+
+        .loading-text {
+            font-size: 14px;
+            color: rgba(255, 0, 0, 0.8);
+            margin-top: 10px;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: rgba(255, 0, 0, 0.6);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="logo">ChatGPT</div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div class="loading-text">LOADING...</div>
+        <div class="footer-text">POWERED BY ME</div>
+    </div>
+</body>
+</html>
