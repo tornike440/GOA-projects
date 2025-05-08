@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juggling Solar System</title>
+  <style>
+    body {
+      background-color: #484848;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      position: relative;
+    }
+
+    .messi, .ronaldo {
+      position: absolute;
+      bottom: 0;
+      width: 10vmin;
+      height: auto;
+      z-index: 10;
+    }
+
+    .messi {
+      left: 5%;
+      animation: ronaldojump 3s linear infinite;
+      animation-delay: -0.3s;
+    }
+
+    .ronaldo {
+      right: 5%;
+      animation: messijump 3s linear infinite;
+      animation-delay: 1.2s;
+    }
+
+    .messi img, .ronaldo img {
+      width: 100%;
+      height: auto;
+    }
+
+    .solar-system {
+      position: absolute;
+      bottom: 20%;
+      width: 20vmin;
+      height: 20vmin;
+      animation: juggle 3s ease-in-out infinite;
+
+    }
+
+    @keyframes juggle {
+      0%   { left: 5%; bottom: 20%; transform: rotate(0deg); }
+      25%  { bottom: 80%; }
+      50%  { left: 85%; bottom: 20%; transform: rotate(360deg); }
+      75%  { bottom: 80%; }
+      100% { left: 5%; bottom: 20%; transform: rotate(0deg); }
+    }
+
+    @keyframes messijump {
+      0%   { bottom: 0; transform: rotate(0deg); }
+      25%  { bottom: 25%; transform: rotate(90deg); }
+      50%  { bottom: 50%; transform: rotate(180deg); }
+      75%  { bottom: 25%; transform: rotate(270deg); }
+      100% { bottom: 0; transform: rotate(360deg); }
+    }
+
+    @keyframes ronaldojump {
+      0%   { bottom: 0; transform: rotate(0deg); }
+      25%  { bottom: 25%; transform: rotate(-90deg); }
+      50%  { bottom: 50%; transform: rotate(-180deg); }
+      75%  { bottom: 25%; transform: rotate(-270deg); }
+      100% { bottom: 0; transform: rotate(-360deg); }
+    }
+
+    .sun {
+      position: absolute;
+      width: 10vmin;
+      height: 10vmin;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      box-shadow: 0 0 20vmin rgba(255, 255, 0, 1);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .sun img {
+      width: 155%;
+      height: 155%;
+      border-radius: 50%;
+      animation: spin 60s linear infinite;
+    }
+
+    .orbit {
+      position: absolute;
+      border: 0.2vmin solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: spin linear infinite;
+    }
+
+    .planet {
+      width: 4%;
+      height: 4%;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="messi">
+    <img src="/lvl62/hw/Screenshot_2025-05-08_223320-removebg-preview.png" alt="Messi">
+  </div>
+
+  <div class="ronaldo">
+    <img src="/lvl62/hw/Screenshot_2025-05-08_223420-removebg-preview.png" alt="Ronaldo">
+  </div>
+
+  <div class="solar-system">
+    <div class="sun">
+      <img src="/lvl62/hw/image-removebg-preview.png" alt="Sun">
+    </div>
+
+    <div class="orbit" style="width: 40%; height: 40%; top: 30%; left: 30%; animation-duration: 10s;">
+      <div class="planet" style="background-color: #ff0000;"></div>
+    </div>
+
+    <div class="orbit" style="width: 60%; height: 60%; top: 20%; left: 20%; animation-duration: 9s;">
+      <div class="planet" style="background-color: #000dff;"></div>
+    </div>
+
+    <div class="orbit" style="width: 80%; height: 80%; top: 10%; left: 10%; animation-duration: 40s;">
+      <div class="planet" style="background-color: #ff0080;"></div>
+    </div>
+
+    <div class="orbit" style="width: 100%; height: 100%; top: 0%; left: 0%; animation-duration: 3s;">
+      <div class="planet" style="background-color: #b0b4ff;"></div>
+    </div>
+
+    <div class="orbit" style="width: 120%; height: 120%; top: -10%; left: -10%; animation-duration: 7s;">
+      <div class="planet" style="background-color: #b4ff05;"></div>
+    </div>
+  </div>
+
+</body>
+</html>
