@@ -48,7 +48,6 @@
       width: 20vmin;
       height: 20vmin;
       animation: juggle 3s ease-in-out infinite;
-
     }
 
     @keyframes juggle {
@@ -140,26 +139,46 @@
       <img src="/lvl62/hw/image-removebg-preview.png" alt="Sun">
     </div>
 
-    <div class="orbit" style="width: 40%; height: 40%; top: 30%; left: 30%; animation-duration: 10s;">
+    <div class="orbit" style="width: 40%; height: 40%; top: 30%; left: 30%; animation-duration: 1s;">
       <div class="planet" style="background-color: #ff0000;"></div>
     </div>
 
-    <div class="orbit" style="width: 60%; height: 60%; top: 20%; left: 20%; animation-duration: 9s;">
+    <div class="orbit" style="width: 60%; height: 60%; top: 20%; left: 20%; animation-duration: 0.09s;">
       <div class="planet" style="background-color: #000dff;"></div>
     </div>
 
-    <div class="orbit" style="width: 80%; height: 80%; top: 10%; left: 10%; animation-duration: 40s;">
+    <div class="orbit" style="width: 80%; height: 80%; top: 10%; left: 10%; animation-duration: 0.4s;">
       <div class="planet" style="background-color: #ff0080;"></div>
     </div>
 
-    <div class="orbit" style="width: 100%; height: 100%; top: 0%; left: 0%; animation-duration: 3s;">
+    <div class="orbit" style="width: 100%; height: 100%; top: 0%; left: 0%; animation-duration: 0.13s;">
       <div class="planet" style="background-color: #b0b4ff;"></div>
     </div>
 
-    <div class="orbit" style="width: 120%; height: 120%; top: -10%; left: -10%; animation-duration: 7s;">
+    <div class="orbit" style="width: 120%; height: 120%; top: -10%; left: -10%; animation-duration: 0.47s;">
       <div class="planet" style="background-color: #b4ff05;"></div>
     </div>
   </div>
+
+  <!-- Audio tags -->
+  <audio src="/lvl62/hw/audiomass-output.mp3" id="messi" loop></audio>
+  <audio src="/lvl62/hw/audiomass-output.mp3" id="ronaldo" loop></audio>
+  <audio src="/lvl62/hw/audiomass-output (1).mp3" id="swoosh" loop></audio>
+
+  <script>
+    // Set playback rate for swoosh sound
+    document.getElementById("swoosh").playbackRate = 2;
+
+    // Delay and play audio for Messi
+    setTimeout(() => {
+      document.getElementById("messi").play();
+    }, 2700); 
+
+    // Delay and play audio for Ronaldo
+    setTimeout(() => {
+      document.getElementById("ronaldo").play();
+    }, 4200); 
+  </script>
 
 </body>
 </html>
