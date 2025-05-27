@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            border-collapse: collapse;
+        }
+        table {
+            margin-left: 30%;
+            margin-top: 20%;
+            width: 40%;
+            border-spacing: 0;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(65, 65, 65, 0.702);
+        }
+        th {
+            border: 1px solid #626262;
+            background-color: #4a927f;
+            color: white;
+            padding: 10px 20px;
+        }
+        tr {
+            font-family: sans-serif;
+            font-size: 1.2em;
+            text-align: left;
+            border: 1px solid #626262;
+        }
+        .info {
+            background-color: #4a927f;
+            transition: all 0.3s ease;
+        }
+        .info:hover {
+            background-color: #e0e0e0;
+            color: #7a7a7a;
+        }
+        .slicer {
+            width: 100%;
+            height: 1px;
+            color: #4a927f;
+        }
+        .em {
+            font-weight: bold;
+            color: #000000;
+            text-decoration: double underline;
+            text-align: center;
+            width: 170px;
+
+        }
+        td{
+            border: 1px solid #626262;
+        }
+
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th class="em">employee</th>
+            <th>status</th>
+            <th>salary</th>
+            <th>department</th>
+        </tr>
+
+        <tr>
+            <td class="info">John Doe</td>
+            <td >Active</td>
+            <td >$50,000</td>
+            <td >Engineering</td>
+        </tr>
+        <tr>
+            <td class="info">Jane Smith</td>
+            <td >Inactive</td>
+            <td >$60,000</td>
+            <td >Marketing</td>
+        </tr>
+        <tr>
+            <td class="info">Alice Johnson</td>
+            <td >Active</td>
+            <td >$70,000</td>
+            <td >Sales</td>
+        </tr>
+    </table>
+
+    
+</body>
+</html>
