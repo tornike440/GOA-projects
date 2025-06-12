@@ -61,7 +61,7 @@ section .product {
 
 .main .info {
   padding: 0px 40px;
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
   font-weight: 500;
   color: hsl(228, 12%, 48%);
   font-size: 1.15rem;
