@@ -25,7 +25,7 @@
     }
     .result {
       flex: 1;
-      background: linear-gradient(180deg, hsl(252,100%,67%), hsl(241,81%,54%));
+      background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -44,7 +44,7 @@
       letter-spacing: 1px;
     }
     .score-circle {
-      background: linear-gradient(180deg, hsla(256,72%,46%,1) 60%, hsla(241,72%,46%,0));
+      background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
       border-radius: 50%;
       width: 160px;
       height: 160px;
@@ -115,15 +115,19 @@
       box-shadow: 0 2px 8px rgba(61,108,236,0.08);
     }
     .summary-item.reaction {
+      background-color: hsla(0, 100%, 67%, 0.158);
       color: hsl(0,100%,67%);
     }
     .summary-item.memory {
+      background-color: hsla(39, 100%, 56%, 0.158);
       color: hsl(39,100%,56%);
     }
-    .summary-item.verbal {
+    .summary-item.verbal {  
+      background-color: hsla(166, 100%, 37%, 0.158);
       color: hsl(166,100%,37%);
     }
     .summary-item.visual {
+      background-color: hsla(234, 85%, 45%, 0.158); 
       color: hsl(234,85%,45%);
     }
     .summary-item .label {
@@ -176,7 +180,7 @@
         <div class="of">of 100</div>
       </div>
       <div class="great">Great</div>
-      <div class="desc">You scored higher than 65% of the people who have taken these tests.</div>
+      <div class="desc">You scored higher than 65% of <br> the people who have taken <br> these tests.</div>
     </div>
     <div class="summary">
       <h3>Summary</h3>
