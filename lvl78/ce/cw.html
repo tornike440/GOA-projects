@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retro Slots</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background-color: #00278a;
+      color: #fff;
+      text-align: center;
+      background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #63b3ff;
+      text-shadow: 2px 2px #000;
+    }
+
+    .slots-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem auto;
+    }
+
+    .slot {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+
+    .slot img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .controls {
+      margin-top: 2rem;
+    }
+
+    input[type="number"] {
+      font-family: 'Press Start 2P', cursive;
+      width: 100px;
+      padding: 0.5rem;
+      font-size: 0.75rem;
+      border: none;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    button {
+      font-family: 'Press Start 2P', cursive;
+      margin-left: 1rem;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #1E90FF;
+      color: white;
+      font-size: 0.75rem;
+      cursor: pointer;
+      box-shadow: 0 0 8px #1E90FF;
+    }
+
+    button:hover {
+      background-color: #63b3ff;
+      box-shadow: 0 0 16px #63b3ff;
+    }
+
+    #result {
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+
+    #coins {
+      font-size: 1rem;
+      color: #63b3ff;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <h1>SLOTS MACHINE</h1>
+  <div id="coins">COINS: 10000</div>
+
+  <div class="slots-container">
+    <div id="slot1" class="slot"></div>
+    <div id="slot2" class="slot"></div>
+    <div id="slot3" class="slot"></div>
+  </div>
+
+  <div class="controls">
+    <input type="number" id="bet-amount" min="1" placeholder="Enter bet" />
+    <button onclick="spinSlots()">SPIN</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    const symbols = [
+      { name: 'cherry', img: 'images/cherry.png' },
+      { name: 'bar', img: 'images/bar.png' },
+      { name: 'doublebar', img: 'images/doublebar.png' },
+      { name: '777', img: 'images/777.png' }
+    ];
+
+    let coins = 10000;
+
+    function updateCoinsDisplay() {
+      document.getElementById('coins').textContent = `COINS: ${coins}`;
+    }
+
+    function renderSlot(id, symbol) {
+      const slot = document.getElementById(id);
+      slot.innerHTML = '';
+
+      const img = document.createElement('img');
+      img.src = symbol.img;
+      img.alt = symbol.name;
+
+      slot.appendChild(img);
+    }
+
+    function spinSlots() {
+      const bet = parseInt(document.getElementById('bet-amount').value);
+      const result = document.getElementById('result');
+
+      if (isNaN(bet) || bet <= 0) {
+        result.textContent = "Enter a valid bet amount!";
+        return;
+      }
+
+      if (coins < bet) {
+        result.textContent = "Not enough coins!";
+        return;
+      }
+
+      coins -= bet;
+
+      const slot1 = symbols[Math.floor(Math.random() * symbols.length)];
+      const slot2 = symbols[Math.floor(Math.random() * symbols.length)];
+      const slot3 = symbols[Math.floor(Math.random() * symbols.length)];
+
+      renderSlot('slot1', slot1);
+      renderSlot('slot2', slot2);
+      renderSlot('slot3', slot3);
+
+      if (slot1.name === slot2.name && slot2.name === slot3.name) {
+        let multiplier = 0;
+        if (slot1.name === 'cherry') multiplier = 2;
+        else if (slot1.name === 'bar') multiplier = 4;
+        else if (slot1.name === 'doublebar') multiplier = 10;
+        else if (slot1.name === '777') multiplier = 100;
+
+        const winnings = bet * multiplier;
+        coins += winnings;
+        result.textContent = `YOU WIN ${winnings} COINS! ✨`;
+      } else {
+        result.textContent = "You lost. Try again!";
+      }
+
+      updateCoinsDisplay();
+    }
+
+    updateCoinsDisplay();
+  </script>
+</body>
+</html>

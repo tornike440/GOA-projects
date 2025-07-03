@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Texas Hold'em Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background-color: #00278a;
+      background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+      color: #fff;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #173e69;
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+
+    header nav a:hover {
+      color: #63b3ff;
+    }
+
+    .game-layout {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2rem;
+      background-color: #001c5a;
+      box-shadow: 4px 0 10px rgba(0, 0, 0, 0.4);
+      min-width: 220px;
+    }
+
+    button {
+      font-family: 'Press Start 2P', cursive;
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #1E90FF;
+      color: white;
+      font-size: 0.75rem;
+      cursor: pointer;
+      box-shadow: 0 0 8px #1E90FF;
+    }
+
+    button:hover {
+      background-color: #63b3ff;
+      box-shadow: 0 0 16px #63b3ff;
+    }
+
+    .main-content {
+      margin-top: 150px;
+      flex: 1;
+      left: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 4rem;
+      padding: 2rem;
+      text-align: center;
+      flex-wrap: wrap;
+      z-index: 90;
+    }
+    img{
+        position: absolute;
+        left: 33%;
+        width: 60%;
+        
+        object-fit: cover;
+        z-index: -1;
+        
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hand, .community {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      width: 80px;
+      height: 120px;
+        font-family: Arial, sans-serif;
+        font-size: 1rem;
+      background-color: #fff;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    #result, #coins {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+
+    #leave-warning {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1rem;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    footer {
+      background-color: #173e69;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.75rem;
+      margin-top: auto;
+    }
+    .table-title {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #00ff1ace;
+    text-shadow: 2px 2px #000;
+    z-index: 2;
+    }
+    .coins-box {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #001c5a;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+      border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 150px;
+
+    }
+    #coins {
+      font-size: 1rem;
+      color: #63b3ff;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">CASINO</div>
+  <nav>
+    <a href="#">HOME</a>
+    <a href="#">GAMES</a>
+    <a href="#">ABOUT</a>
+  </nav>
+</header>
+
+<div id="leave-warning">
+  <p id="leave-message"></p>
+  <button onclick="confirmLeave()">YES, EXIT</button>
+  <button onclick="cancelLeave()">CANCEL</button>
+</div>
+
+<div class="game-layout">
+  <div class="sidebar">
+    <button onclick="dealHands()">DEAL</button>
+    <button onclick="callBet()">CALL (100)</button>
+    <button onclick="foldHand()">FOLD</button>
+    <button onclick="showFlop()">FLOP</button>
+    <button onclick="showTurn()">TURN</button>
+    <button onclick="showRiver()">RIVER</button>
+    <button onclick="revealWinner()">SHOWDOWN</button>
+    <button onclick="attemptLeave()">LEAVE</button>
+  </div>
+  <div id="coins-box">
+    <div id="coins">COINS: 10000</div>
+    </div>
+  <img src="/lvl78/ce/ptable.png" alt="">
+  <div class="main-content">
+    <h1 class="table-title">Texas Hold'em</h1>
+    <div class="section">
+      <h2>YOUR HAND</h2>
+      <div id="player-hand" class="hand"></div>
+    </div>
+
+    
+
+    <div class="section">
+      <h2>COMMUNITY CARDS</h2>
+      <div id="community-cards" class="community"></div>
+    </div>
+
+    <div class="section">
+      <h2>COMPUTER HAND</h2>
+      <div id="computer-hand" class="hand"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Tornike Beridze</p>
+  <p>
+    <a href="https://www.instagram.com/tornike.beridze.1213/" style="color: #63b3ff; text-decoration: none;">📞 Contact</a>
+  </p>
+</footer>
+
+<script>
+  const suits = ['♠️', '♥️', '♣️', '♦️'];
+  const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+  let deck = [], playerHand = [], computerHand = [], communityCards = [];
+  let coins = 10000;
+  let profit = 0;
+  let bet = 0;
+
+  function updateCoinsDisplay() {
+    document.getElementById('coins').textContent = `COINS: ${coins}`;
+  }
+
+  function createDeck() {
+    let newDeck = [];
+    for (let suit of suits) {
+      for (let rank of ranks) {
+        newDeck.push({ rank, suit });
+      }
+    }
+    return newDeck;
+  }
+
+  function shuffle(deck) {
+    for (let i = deck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
+    return deck;
+  }
+
+  function dealHands() {
+    deck = shuffle(createDeck());
+    playerHand = [deck.pop(), deck.pop()];
+    computerHand = [deck.pop(), deck.pop()];
+    communityCards = [deck.pop(), deck.pop(), deck.pop(), deck.pop(), deck.pop()];
+    bet = 0;
+
+    renderHand('player-hand', playerHand);
+    renderHand('computer-hand', [{rank: '?', suit: '?'}, {rank: '?', suit: '?'}]);
+    document.getElementById('community-cards').innerHTML = '';
+    document.getElementById('result').textContent = '';
+  }
+
+  function renderHand(containerId, cards) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+    cards.forEach(card => {
+      const cardDiv = document.createElement('div');
+      cardDiv.className = 'card';
+      cardDiv.textContent = `${card.rank}${card.suit}`;
+      container.appendChild(cardDiv);
+    });
+  }
+
+  function showFlop() {
+    renderHand('community-cards', communityCards.slice(0, 3));
+  }
+
+  function showTurn() {
+    renderHand('community-cards', communityCards.slice(0, 4));
+  }
+
+  function showRiver() {
+    renderHand('community-cards', communityCards.slice(0, 5));
+  }
+
+  function callBet() {
+    if (coins >= 100) {
+      coins -= 100;
+      bet += 100;
+      updateCoinsDisplay();
+    } else {
+      alert("Not enough coins to call!");
+    }
+  }
+
+  function foldHand() {
+    document.getElementById('result').textContent = 'YOU FOLDED! COMPUTER WINS 🖥️';
+  }
+
+  function revealWinner() {
+    renderHand('computer-hand', computerHand);
+    const win = Math.random() > 0.5;
+    const result = document.getElementById('result');
+    if (win) {
+      coins += 2 * bet;
+      profit += bet;
+      result.textContent = 'YOU WIN 💰';
+    } else {
+      profit -= bet;
+      result.textContent = 'COMPUTER WINS 🖥️';
+    }
+    updateCoinsDisplay();
+  }
+
+  function attemptLeave() {
+    const msg = `You sure you want to leave? Your profit is ${profit >= 0 ? '+' : ''}${(profit / 1000).toFixed(1)}k coins.`;
+    document.getElementById('leave-message').textContent = msg;
+    document.getElementById('leave-warning').style.display = 'flex';
+  }
+
+  function confirmLeave() {
+    window.location.href = "https://cw.com/";
+  }
+
+  function cancelLeave() {
+    document.getElementById('leave-warning').style.display = 'none';
+  }
+
+  updateCoinsDisplay();
+</script>
+
+</body>
+</html>
