@@ -2,180 +2,187 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Retro Slots</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pixel Casino Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Press Start 2P', cursive;
       background-color: #00278a;
-      color: #fff;
-      text-align: center;
       background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
-      margin: 0;
-      padding: 2rem;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #173e69;
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      color: #ffdd00;
+      transition: transform 0.5s ease-in-out;
+    }
+    header .logo:hover {
+      transform: rotate(360deg);
+      
+    }
+    nav a {
+      margin-left: 2rem;
+      color: #ff0000;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .slot-machine {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      margin-bottom: 2rem;
+    }
+
+    .slot-machine img {
+      width: 380px;
+      max-width: 95vw;
+      display: block;
+      image-rendering: pixelated;
     }
 
     h1 {
-      font-size: 1.5rem;
-      color: #63b3ff;
-      text-shadow: 2px 2px #000;
+      font-size: 1.75rem;
+      margin: 2rem 0 1rem;
     }
 
-    .slots-container {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 2rem auto;
+    p {
+      font-size: 0.8rem;
+      margin-bottom: 2.5rem;
     }
 
-    .slot {
-      width: 100px;
-      height: 100px;
-      background-color: #fff;
-      color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-    }
-
-    .slot img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-    }
-
-    .controls {
-      margin-top: 2rem;
-    }
-
-    input[type="number"] {
-      font-family: 'Press Start 2P', cursive;
-      width: 100px;
-      padding: 0.5rem;
-      font-size: 0.75rem;
-      border: none;
-      border-radius: 6px;
-      text-align: center;
-    }
-
-    button {
-      font-family: 'Press Start 2P', cursive;
-      margin-left: 1rem;
-      padding: 0.75rem 1rem;
+    .play-btn {
+      background-color: #1e90ff;
+      color: white;
       border: none;
       border-radius: 8px;
-      background-color: #1E90FF;
-      color: white;
+      padding: 1rem 2.5rem;
       font-size: 0.75rem;
       cursor: pointer;
-      box-shadow: 0 0 8px #1E90FF;
+      box-shadow: 0 0 8px #1e90ff;
+      transition: all 0.2s ease;
     }
 
-    button:hover {
+    .play-btn:hover {
       background-color: #63b3ff;
       box-shadow: 0 0 16px #63b3ff;
     }
 
-    #result {
-      margin-top: 2rem;
-      font-size: 1rem;
+    .game-grid {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 2rem;
+      justify-items: center;
     }
 
-    #coins {
-      font-size: 1rem;
-      color: #63b3ff;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    .game-card img {
+      width: 200px;
+      height: 200px;
+      border-radius: 48px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      transition: transform 0.2s ease;
+      transform: translateY(0);
+      image-rendering: pixelated;
+    }
+
+    .game-card:hover img {
+      transform: translateY(-6px);
+    }
+
+    footer {
+      background-color: #0c2b52;
+      text-align: center;
+      padding: 1rem 0.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 1px;
+      border-top: 2px solid #1e90ff55;
+      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
-  <h1>SLOTS MACHINE</h1>
-  <div id="coins">COINS: 10000</div>
+  <header>
+    <div class="logo">RETRO CASINO</div>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="help.html">HELP</a>
+    </nav>
+  </header>
 
-  <div class="slots-container">
-    <div id="slot1" class="slot"></div>
-    <div id="slot2" class="slot"></div>
-    <div id="slot3" class="slot"></div>
-  </div>
+  <main>
+    <div class="slot-machine" onclick="pullLever()">
+      <img src="/lvl78/ce/Adobe Express - file.png" alt="Slot Machine" />
+    </div>
 
-  <div class="controls">
-    <input type="number" id="bet-amount" min="1" placeholder="Enter bet" />
-    <button onclick="spinSlots()">SPIN</button>
-  </div>
+    <h1 id="result-text">WELCOME TO CASINO DEMO</h1>
+    <p>Try our casino games for free in demo mode</p>
+    <button class="play-btn">PLAY NOW</button>
 
-  <div id="result"></div>
+    <div class="game-grid">
+      <div class="game-card">
+        <a href="blackjack.html"><img src="poker.png" alt="Poker" /></a>
+      </div>
+      <div class="game-card">
+        <a href="dogi.html"><img src="dogi.png" alt="Horse Racing" /></a>
+      </div>
+      <div class="game-card">
+        <a href="roullette.html"><img src="roullette.png" alt="Roulette" /></a>
+      </div>
+      <div class="game-card">
+        <a href="slot.html"><img src="slot.png" alt="Slots" /></a>
+      </div>
+    </div>
+  </main>
+  <audio id="spin-sound" src="rename.mp3"></audio>
+  <audio id="win-sound" src="win.mp3"></audio>
+
+  <footer>
+    © 2025 Pixel Casino Demo — All Rights Reserved | <a href="#" style="color:#63b3ff; text-decoration:none;">Privacy Policy</a>
+  </footer>
 
   <script>
-    const symbols = [
-      { name: 'cherry', img: 'images/cherry.png' },
-      { name: 'bar', img: 'images/bar.png' },
-      { name: 'doublebar', img: 'images/doublebar.png' },
-      { name: '777', img: 'images/777.png' }
-    ];
-
-    let coins = 10000;
-
-    function updateCoinsDisplay() {
-      document.getElementById('coins').textContent = `COINS: ${coins}`;
+    function pullLever() {
+      document.getElementById('spin-sound').play();
+      
+      const result = document.getElementById('result-text');
+      result.textContent = 'SPINNING...';
+      setTimeout(() => {
+        result.textContent = '🎉 JACKPOT! 777 🎉';
+        document.getElementById('win-sound').play();
+      }, 1000);
     }
-
-    function renderSlot(id, symbol) {
-      const slot = document.getElementById(id);
-      slot.innerHTML = '';
-
-      const img = document.createElement('img');
-      img.src = symbol.img;
-      img.alt = symbol.name;
-
-      slot.appendChild(img);
-    }
-
-    function spinSlots() {
-      const bet = parseInt(document.getElementById('bet-amount').value);
-      const result = document.getElementById('result');
-
-      if (isNaN(bet) || bet <= 0) {
-        result.textContent = "Enter a valid bet amount!";
-        return;
-      }
-
-      if (coins < bet) {
-        result.textContent = "Not enough coins!";
-        return;
-      }
-
-      coins -= bet;
-
-      const slot1 = symbols[Math.floor(Math.random() * symbols.length)];
-      const slot2 = symbols[Math.floor(Math.random() * symbols.length)];
-      const slot3 = symbols[Math.floor(Math.random() * symbols.length)];
-
-      renderSlot('slot1', slot1);
-      renderSlot('slot2', slot2);
-      renderSlot('slot3', slot3);
-
-      if (slot1.name === slot2.name && slot2.name === slot3.name) {
-        let multiplier = 0;
-        if (slot1.name === 'cherry') multiplier = 2;
-        else if (slot1.name === 'bar') multiplier = 4;
-        else if (slot1.name === 'doublebar') multiplier = 10;
-        else if (slot1.name === '777') multiplier = 100;
-
-        const winnings = bet * multiplier;
-        coins += winnings;
-        result.textContent = `YOU WIN ${winnings} COINS! ✨`;
-      } else {
-        result.textContent = "You lost. Try again!";
-      }
-
-      updateCoinsDisplay();
-    }
-
-    updateCoinsDisplay();
   </script>
 </body>
 </html>
