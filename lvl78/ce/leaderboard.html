@@ -106,6 +106,29 @@
   });
 
   loadLeaderboard();
+
+  (function() {
+  const userId = localStorage.getItem('currentUserId');
+  if (!userId) {
+    window.location.href = 'login.html';
+    return;
+  }
+
+  const userDataRaw = localStorage.getItem(userId);
+  if (!userDataRaw) {
+    localStorage.removeItem('currentUserId');
+    window.location.href = 'login.html';
+    return;
+  }
+
+  window.currentUser = JSON.parse(userDataRaw);
+
+  if (window.currentUser.coins <= 0) {
+    alert("You have 0 coins and cannot play this game.");
+    // Here you can disable play buttons or redirect user
+  }
+})();
+
 </script>
 
 </body>
