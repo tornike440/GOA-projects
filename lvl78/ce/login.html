@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login - Retro Casino</title>
+<style>
+  /* Retro dark theme */
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background-color: #00278a;
+      background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+      color: #ffffff;
+      display: flex;
+        justify-content: center;
+        align-items: center;
+
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+  #login-box {
+    background-color: #8a00006f;
+      background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+    padding: 30px 40px;
+    border: 3px solid #f0e68c;
+    border-radius: 10px;
+    text-align: center;
+    width: 320px;
+  }
+  #login-box h2 {
+    margin-bottom: 20px;
+  }
+  input {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  input:focus {
+    border: 2px solid #f0e68c;
+    background: #333;
+    color: #f0e68c;
+  }
+  button {
+    font-family: inherit;
+    background: #f0e68c;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #222;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #ffe100;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  }
+</style>
+</head>
+<body>
+
+<div id="login-box">
+  <h2>Login</h2>
+  <input id="name" placeholder="Name" autocomplete="off" />
+  <input id="surname" placeholder="Surname" autocomplete="off" />
+  <br />
+  <button id="login-btn">Start Playing</button>
+</div>
+
+<script>
+document.getElementById('login-btn').addEventListener('click', () => {
+  const name = document.getElementById('name').value.trim();
+  const surname = document.getElementById('surname').value.trim();
+
+  if (!name || !surname) {
+    alert('Please enter both name and surname');
+    return;
+  }
+
+  const userId = `${name}_${surname}`;
+  let userData = localStorage.getItem(userId);
+  if (!userData) {
+    userData = {
+      name,
+      surname,
+      coins: 10000
+    };
+    localStorage.setItem(userId, JSON.stringify(userData));
+  }
+
+  localStorage.setItem('currentUserId', userId);
+  window.location.href = 'game.html'; // Change to your actual game main page
+});
+</script>
+
+</body>
+</html>
