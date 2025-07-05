@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Retro Slots</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Press Start 2P', cursive;
@@ -15,7 +15,6 @@
       margin: 0;
       padding-bottom: 140px;
     }
-
     header {
       background-color: #173e69;
       padding: 2rem;
@@ -27,35 +26,29 @@
       top: 0;
       z-index: 100;
     }
-
     header .logo {
       font-size: 1.5rem;
       letter-spacing: 2px;
       color: #ffdd00;
       transition: transform 0.5s ease-in-out;
     }
-
     header .logo:hover {
       transform: rotate(360deg);
     }
-
     nav a {
       margin-left: 2rem;
       color: #ff0000;
       text-decoration: none;
     }
-
     nav a:hover {
       text-decoration: underline;
     }
-
     h1 {
       font-size: 1.5rem;
       color: #63b3ff;
       text-shadow: 2px 2px #000;
       margin-top: 3rem;
     }
-
     #coins {
       font-size: 1rem;
       color: #ff0000;
@@ -63,7 +56,6 @@
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
       margin-bottom: 2rem;
     }
-
     .game {
       display: flex;
       flex-direction: column;
@@ -72,7 +64,6 @@
       margin-top: 4rem;
       position: relative;
     }
-
     img.bg {
       position: absolute;
       z-index: 1;
@@ -82,7 +73,6 @@
       border-radius: 30px;
       box-shadow: 0 0 20px 5px rgba(255, 223, 0, 0.9);
     }
-
     .slots-container {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -92,7 +82,6 @@
       margin-top: 40px;
       margin-left: 20px;
     }
-
     .slot {
       width: 100px;
       height: 100px;
@@ -101,13 +90,11 @@
       justify-content: center;
       align-items: center;
     }
-
     .slot img {
       width: 80px;
       height: 80px;
       object-fit: contain;
     }
-
     .controls {
       margin-top: 50px;
       width: 320px;
@@ -117,7 +104,6 @@
       align-items: center;
       gap: 1rem;
     }
-
     input[type="number"] {
       font-family: 'Press Start 2P', cursive;
       width: 100px;
@@ -127,7 +113,6 @@
       border-radius: 6px;
       text-align: center;
     }
-
     .spin-button {
       font-family: 'Arial Black', sans-serif;
       background: linear-gradient(to bottom, #FFD700, #DAA520);
@@ -142,17 +127,14 @@
       transition: all 0.3s ease-in-out;
       cursor: pointer;
     }
-
     .spin-button:hover {
       background: linear-gradient(to bottom, #FFEC8B, #FFD700);
       box-shadow: 0 0 20px 5px rgba(255, 223, 0, 0.9);
     }
-
     #result {
       font-size: 1rem;
       margin-top: 1rem;
     }
-
     footer {
       background-color: #173e69;
       color: #ffffff;
@@ -176,10 +158,10 @@
   </header>
 
   <h1>SLOTS MACHINE</h1>
-  <div id="coins">COINS: 10000</div>
+  <div id="coins">COINS: 0</div>
 
   <div class="game">
-    <img class="bg" src="slotmachin.png" alt="Slot Machine Background">
+    <img class="bg" src="slotmachin.png" alt="Slot Machine Background" />
     <div class="slots-container">
       <!-- 15 slots -->
       <div id="slot1" class="slot"></div>
@@ -209,6 +191,7 @@
       <div id="result"></div>
     </div>
   </div>
+
   <audio id="spin-sound" src="rename.mp3"></audio>
   <audio id="win-sound" src="win.mp3"></audio>
 
@@ -232,10 +215,22 @@
       { name: 'slot q', img: 'slot q.png', multiplier: 130 }
     ];
 
-    let coins = 10000;
+    let coins = 0;
 
     function updateCoinsDisplay() {
       document.getElementById('coins').textContent = `COINS: ${coins}`;
+    }
+
+    function saveCoins() {
+      const userId = localStorage.getItem('currentUserId');
+      if (!userId) return;
+
+      const userDataRaw = localStorage.getItem(userId);
+      if (!userDataRaw) return;
+
+      const user = JSON.parse(userDataRaw);
+      user.coins = coins;
+      localStorage.setItem(userId, JSON.stringify(user));
     }
 
     function renderSlot(id, symbol) {
@@ -273,9 +268,9 @@
     }
 
     function oneliner() {
-      document.getElementById('spin-sound').play();
       const bet = parseInt(document.getElementById('bet-amount').value);
       const result = document.getElementById('result');
+
       if (isNaN(bet) || bet <= 0) {
         result.textContent = "Enter a valid bet amount!";
         return;
@@ -287,11 +282,19 @@
 
       coins -= bet;
       updateCoinsDisplay();
+      saveCoins();
       result.textContent = "";
+
+      document.getElementById('spin-sound').play();
 
       spin((s) => {
         const [a, b, c, d, e] = [s[5], s[6], s[7], s[8], s[9]];
-        if (a.name === b.name && b.name === c.name && c.name === d.name && d.name === e.name) {
+        if (
+          a.name === b.name &&
+          b.name === c.name &&
+          c.name === d.name &&
+          d.name === e.name
+        ) {
           const win = bet * a.multiplier;
           coins += win;
           result.textContent = `🎉 JACKPOT! YOU WIN ${win} COINS (Middle Line)! ✨`;
@@ -300,14 +303,15 @@
           result.textContent = "You lost on 1 line!";
         }
         updateCoinsDisplay();
+        saveCoins();
       });
     }
 
     function threeliner() {
-      document.getElementById('spin-sound').play();
       const bet = parseInt(document.getElementById('bet-amount').value);
       const result = document.getElementById('result');
       const totalBet = bet * 3;
+
       if (isNaN(bet) || bet <= 0) {
         result.textContent = "Enter a valid bet amount!";
         return;
@@ -319,7 +323,10 @@
 
       coins -= totalBet;
       updateCoinsDisplay();
+      saveCoins();
       result.textContent = "";
+
+      document.getElementById('spin-sound').play();
 
       spin((s) => {
         let win = 0;
@@ -327,7 +334,7 @@
         const line2 = [s[5], s[6], s[7], s[8], s[9]];
         const line3 = [s[10], s[11], s[12], s[13], s[14]];
 
-        if (line1.every(x => x.name === line1[0].name)) win += bet * line1[0].multiplier ;
+        if (line1.every(x => x.name === line1[0].name)) win += bet * line1[0].multiplier;
         if (line2.every(x => x.name === line2[0].name)) win += bet * line2[0].multiplier;
         if (line3.every(x => x.name === line3[0].name)) win += bet * line3[0].multiplier;
 
@@ -339,14 +346,15 @@
         }
         coins += win;
         updateCoinsDisplay();
+        saveCoins();
       });
     }
 
     function fiveliner() {
-      document.getElementById('spin-sound').play();
       const bet = parseInt(document.getElementById('bet-amount').value);
       const result = document.getElementById('result');
       const totalBet = bet * 5;
+
       if (isNaN(bet) || bet <= 0) {
         result.textContent = "Enter a valid bet amount!";
         return;
@@ -358,7 +366,10 @@
 
       coins -= totalBet;
       updateCoinsDisplay();
+      saveCoins();
       result.textContent = "";
+
+      document.getElementById('spin-sound').play();
 
       spin((s) => {
         let win = 0;
@@ -367,7 +378,7 @@
           [s[5], s[6], s[7], s[8], s[9]],
           [s[10], s[11], s[12], s[13], s[14]],
           [s[0], s[6], s[12], s[8], s[4]],
-          [s[14], s[8], s[2], s[6], s[10]]
+          [s[14], s[8], s[2], s[6], s[10]],
         ];
 
         lines.forEach(line => {
@@ -376,36 +387,41 @@
           }
         });
 
-        result.textContent = win ? `🎉 YOU WIN ${win} COINS (5 LINES)! ✨` : "You lost on 5 lines!";
+        result.textContent = win
+          ? `🎉 YOU WIN ${win} COINS (5 LINES)! ✨`
+          : "You lost on 5 lines!";
+
         coins += win;
         updateCoinsDisplay();
+        saveCoins();
       });
     }
 
-    updateCoinsDisplay();
+    // On page load, load coins and check login
+    (function () {
+      const userId = localStorage.getItem('currentUserId');
+      if (!userId) {
+        window.location.href = 'login.html';
+        return;
+      }
 
-    (function() {
-  const userId = localStorage.getItem('currentUserId');
-  if (!userId) {
-    window.location.href = 'login.html';
-    return;
-  }
+      const userDataRaw = localStorage.getItem(userId);
+      if (!userDataRaw) {
+        localStorage.removeItem('currentUserId');
+        window.location.href = 'login.html';
+        return;
+      }
 
-  const userDataRaw = localStorage.getItem(userId);
-  if (!userDataRaw) {
-    localStorage.removeItem('currentUserId');
-    window.location.href = 'login.html';
-    return;
-  }
+      window.currentUser = JSON.parse(userDataRaw);
+      coins = window.currentUser.coins || 0;
 
-  window.currentUser = JSON.parse(userDataRaw);
+      if (coins <= 0) {
+        alert("You have 0 coins and cannot play this game.");
+        // Optional: disable play buttons here
+      }
 
-  if (window.currentUser.coins <= 0) {
-    alert("You have 0 coins and cannot play this game.");
-    // Here you can disable play buttons or redirect user
-  }
-})();
-
+      updateCoinsDisplay();
+    })();
   </script>
 </body>
 </html>
