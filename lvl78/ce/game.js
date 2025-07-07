@@ -105,7 +105,7 @@ function Horse(id, x, y) {
         this.moveRight();
       } else {
         this.element.className = 'horse runDown';
-        this.speed = Math.random() * 10 + 10;
+        this.speed = Math.random() * 5 + 5;
         this.moveDown();
       }
     }, 1000 / this.speed);

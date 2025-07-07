@@ -1,13 +1,11 @@
-<!-- help.html (how to play) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Play - Retro Casino</title>
+  <title>About - Retro Casino</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
-    /* Same styles as privacy page, with updated content */
     body {
       font-family: 'Press Start 2P', cursive;
       background-color: #00278a;
@@ -15,7 +13,9 @@
       color: #ffffff;
       margin: 0;
       padding: 0;
+;
     }
+
     header {
       background-color: #173e69;
       padding: 1.5rem;
@@ -26,50 +26,85 @@
       color: #63b3ff;
       text-shadow: 2px 2px #000;
     }
+
     header .logo {
       font-size: 1.5rem;
       letter-spacing: 2px;
       color: #ffdd00;
       transition: transform 0.5s ease-in-out;
     }
+
     header .logo:hover {
       transform: rotate(360deg);
     }
+
     nav a {
       margin-left: 2rem;
       color: #ff0000;
       text-decoration: none;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     main {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(15, auto);
+      gap: 1rem;
       padding: 2rem;
-      max-width: 900px;
+      max-width: 1600px;
       margin: auto;
-      font-size: 0.6rem;
-      line-height: 2;
     }
+
     h1 {
+      grid-column: 1 / -1;
       text-align: center;
+      font-size: 1.2rem;
       color: #63b3ff;
       text-shadow: 2px 2px #000;
       margin-bottom: 2rem;
     }
-    section {
-      background: #041b5a;
+
+    .section {
+      background-color: #041b5a;
       border: 2px dashed #ffdd00;
       padding: 1.5rem;
       border-radius: 20px;
       box-shadow: 0 0 10px rgba(255, 255, 0, 0.4);
-      margin-bottom: 2rem;
+      font-size: 0.6rem;
+      line-height: 2;
     }
-    section h2 {
+
+    .section h2 {
+      font-size: 0.75rem;
       color: #FFD700;
       margin-bottom: 1rem;
-      font-size: 0.75rem;
       text-shadow: 1px 1px 2px #000;
     }
+
+    /* Grid placement */
+    .section1 {
+      grid-column: 1 / 5;
+      grid-row: 2 / 5;
+    }
+
+    .section2 {
+      grid-column: 8 / 12;
+      grid-row: 4 / 7;
+    }
+
+    .section3 {
+      grid-column: 3 / 7;
+      grid-row: 8 / 11;
+    }
+
+    .section4 {
+      grid-column: 7 / 11;
+      grid-row: 11 / 14;
+    }
+
     footer {
       background-color: #173e69;
       color: #fff;
@@ -77,43 +112,90 @@
       padding: 1rem 0;
       font-size: 0.75rem;
     }
+
     a {
       color: #63b3ff;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+    .yel {
+      background-color: #ffdd00;
+      width: 5px;
+      height: 149.5%;
+      position: absolute;
+      top: 22%;
+      left: 50%;
+    }
+    .yel2 {
+      background-color: #ffdd00;
+      width: 50%;
+      height: 5px;
+      position: absolute;
+      top: 72%;
+      right: 50%;
+    }
+
   </style>
 </head>
 <body>
+
   <header>
     <div class="logo">RETRO CASINO</div>
     <nav>
       <a href="cw.html">HOME</a>
       <a href="about.html">ABOUT</a>
-      <a href="privacy.html">PRIVACY</a>
+      <a href="help.html">HELP</a>
+      <a href="leaderboard.html">LEADERBOARD</a>
+      <a href="contact.html">CONTACT</a>
     </nav>
   </header>
 
   <main>
-    <h1>How to Play</h1>
-    <section>
-      <h2>🃏 Blackjack</h2>
-      <p>Try to beat the dealer by getting a hand closer to 21 without going over. Face cards are 10, Aces are 1 or 11. Player goes first, then dealer.</p>
-    </section>
-    <section>
-      <h2>🐎 Dogi Race</h2>
-      <p>Choose a dogi and place your bet. Watch the animated race and see if your dogi wins. Payouts depend on odds. It’s all about luck and timing!</p>
-    </section>
-    <section>
-      <h2>🎰 Slot Machine</h2>
-      <p>Click to spin the reels. Match symbols on the paylines to win coins. Classic slot rules — triple match is jackpot, others pay based on rarity.</p>
-    </section>
-  </main>
+    <h1>Help & How to Play</h1>
 
+    <div class="section section1">
+      <h2>🃏 How to Play Blackjack</h2>
+      <p>
+      Try to get your hand as close to 21 as possible without going over. Face cards are worth 10, Aces are 1 or 11. Click "Hit" to draw a card or "Stand" to keep your hand. The dealer plays after you. Whoever is closer to 21 wins!
+      </p>
+    </div>
+
+    <div class="section section2">
+      <h2>🎲 How to Play Roulette</h2>
+      <p>
+      Place your bet on a number, color, or group of numbers. Click "Spin" to start the wheel. If the ball lands on your pick, you win coins! Different bets have different payouts. Try your luck and see where the ball lands.
+      </p>
+    </div>
+
+    <div class="section section3">
+      <h2>🐕 How to Play Dogi Race</h2>
+      <p>
+      Choose your favorite dogi and place a bet. Watch the animated race unfold. If your dogi finishes first, you win based on the odds! It’s all about luck and picking the right racer.
+      </p>
+    </div>
+
+    <div class="section section4">
+      <h2>🎰 How to Play Slots</h2>
+      <p>
+      Click "Spin" to spin the reels. Match symbols on the paylines to win coins. Three of a kind is a jackpot! Other matches pay based on symbol rarity. No tricks, just classic slot fun.
+      </p>
+    </div>
+  </main>
+  <div class="yel"></div>
+  <div class="yel" style="left: 15%; top: 72%; height: 99.5%;"></div>
+  <div class="yel2"></div>
+  <div class="yel2" style=" top: 132%; width: 35%;"></div>
+  <div class="yel2" style="left: 0%; top: 122%; width: 15%;"></div>
+  <div class="yel2" style="left: 50%; top: 42%;"></div>
+  <div class="yel2" style="left: 50%; top: 92%;"></div>
+  <div class="yel2" style="left: 50%; top: 162%;"></div>
   <footer>
-    &copy; 2025 Retro Casino | For Fun Only
+    &copy; 2025 Tornike Beridze |
+    <a href="https://www.instagram.com/tornike.beridze.1213/">📞 Contact</a>
   </footer>
+
 </body>
 </html>

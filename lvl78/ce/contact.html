@@ -1,0 +1,129 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login - Retro Casino</title>
+<style>
+  /* Retro dark theme */
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background-color: #00278a;
+      background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+      color: #ffffff;
+      display: flex;
+        justify-content: center;
+        align-items: center;
+
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+  #login-box {
+    background-color: #8a00006f;
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+    padding: 30px 40px;
+    border: 3px solid #f0e68c;
+    border-radius: 10px;
+    text-align: center;
+    width: 320px;
+    margin: 30px auto;
+    box-shadow: 0 0 18px #000a;
+  }
+  #login-box h2 {
+    margin-bottom: 20px;
+  }
+  form {
+    background-color: #8a00006f;
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+    padding: 30px 40px;
+    border: 3px solid #f0e68c;
+    border-radius: 10px;
+    text-align: center;
+    width: 320px;
+    margin: 30px auto;
+    box-shadow: 0 0 18px #000a;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  form label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 13px;
+    margin-bottom: 0;
+    color: #ffe100;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #000a;
+  }
+  input,
+  textarea {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 6px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: #222;
+    color: #f0e68c;
+    box-sizing: border-box;
+    resize: none;
+  }
+  textarea {
+    min-height: 70px;
+    max-height: 200px;
+  }
+  input:focus,
+  textarea:focus {
+    border: 2px solid #f0e68c;
+    background: #333;
+    color: #ffe100;
+  }
+  button {
+    font-family: inherit;
+    background: #f0e68c;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #222;
+    transition: background 0.3s ease, box-shadow 0.3s;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    font-size: 15px;
+  }
+  button:hover {
+    background: #ffe100;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  }
+</style>
+</head>
+<body>
+
+  <a href="cw.html"><button style="position: absolute; top: 20px; left: 20px;">back</button></a>
+<form
+  action="https://formspree.io/f/xwpbdkaq"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
+
+
+</body>
+</html>
