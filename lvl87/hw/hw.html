@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexcent Header (Grid Layout)</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 10px 90px;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .logo img {
+      height: 20px;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+      justify-content: flex-start;
+    }
+
+    nav ul li {
+      font-size: 20px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .register-btn {
+      background-color: #69b96e;
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      height: 80px;
+      width: 280px;
+    }
+
+    main {
+      background-color: #F5F7FA;
+      padding: 80px 90px;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .content-left {
+      padding-top: 80px;
+      padding-left: 90px;
+    }
+
+    .content-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px;
+    }
+
+    .content img {
+      width: 50%;
+      height: auto;
+    }
+
+    .p1 {
+      font-size: 100px;
+      font-weight: bold;
+      color: #424242;
+    }
+
+    .p2 {
+      font-size: 100px;
+      font-weight: 600;
+      color: #69b96e;
+    }
+
+    .p3 {
+      font-size: 30px;
+      font-weight: 500;
+      color: #717171;
+      margin-top: 24px;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Nexcent Logo" />
+    </div>
+
+    <div class="divider"></div>
+
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Features</li>
+        <li>Community</li>
+        <li>Blog</li>
+        <li>Pricing</li>
+      </ul>
+    </nav>
+
+    <button class="register-btn">
+      Register Now <span class="arrow">→</span>
+    </button>
+  </header>
+
+  <main>
+    <div class="content">
+      <div class="content-left">
+        <p class="p1">
+          lessons and insights <span class="p2">from 8 years</span>
+        </p>
+        <p class="p3">
+          where to grow your business as a photographer: site or social media?
+        </p>
+        <button class="register-btn">Register Now</button>
+      </div>
+      <div class="content-right">
+        <img src="Illustration (1).png" alt="Illustration" />
+      </div>
+    </div>
+
+
+    
+  </main>
+</body>
+</html>

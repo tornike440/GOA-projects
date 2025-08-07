@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Kumbh+Sans:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Raleway", sans-serif;
+    height: 100vh;
+
+}
+main{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 250px;
+    padding: 20px 0px;
+    border-bottom: 2px solid #A8A8A8;
+}
+nav{
+    display: flex;
+    align-items: center;
+    
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+nav ul li{
+    list-style-type: none;
+    font-weight: 400;
+}
+header h2{
+    font-weight: 700;
+    font-style: bold;
+    font-size: 30px;
+}
+header button{
+    font-weight: 700;
+    font-size: 18px;
+    background-color: #FFCE31;
+    height: 60px;
+    width: 180px;
+    border: none;
+    border-radius: 30px;
+}
+header img{
+    display: none;
+}
+
+
+.sec1{
+    padding: 150px 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sec1 img{
+    width: 815px;
+    height: auto;
+}
+
+.div1{
+    max-width: 730px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.div1 h1{
+    font-weight: 700;
+    font-size: 100px;
+}
+
+.div1 p{
+    font-size: 22px;
+    font-weight: 400;
+
+}
+
+.div2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 40px;
+}
+
+.div2 input{
+    width: 417px;
+    height: 72px;
+    border-radius: 36px;
+    background-color: #F5F5F5;
+    outline: none;
+    border: none;
+    padding: 0px 40px;
+}
+
+.div2 input::placeholder {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.div2 button{
+    width: 216px;
+    height: 72px;
+    border-radius: 36px;
+    background-color: #FFCE31;
+    border: none;
+    font-weight: 400;
+    font-size: 20px;
+    border: none;
+}
+ 
+@media(max-width:2050px){
+
+    .div1{
+        width: 600px;
+    }
+
+    .div1 h1{
+    font-weight: 700;
+    font-size: 80px;
+    }
+
+    .div1 p{
+        font-size: 18px;
+        font-weight: 400;
+
+    }
+
+    
+    .sec1 img{
+        width: 650px;
+        height: auto;
+    }
+    .div2 input{
+        width: 250px;
+    }
+    .div2 button{
+        width: 150px;
+    }
+
+}
+
+@media(max-width:1300px){
+
+
+    .sec1{
+
+        padding: 100px 50px;
+    
+    }
+    header{
+    margin: 0px 50px;
+    }
+    
+
+
+    .div1{
+        margin-right: 15px;
+        width: 600px;
+    }
+
+    
+
+
+    .div2 input{
+        width: 250px;
+        height: 50px;
+        border-radius: 25px;
+    }
+    .div2 input::placeholder{
+        font-size: 16px;
+    }
+    .div2 button{
+        width: 150px;
+        height: 50px;
+        border-radius: 25px;
+        font-size: 16px;
+
+    }
+    .div1 h1{
+    font-weight: 700;
+    font-size: 60px;
+    }
+
+    .div1 p{
+        font-size: 18px;
+        font-weight: 400;
+
+    }
+
+    .sec1 img{
+        width: 400px;
+    }
+
+    
+
+}
+
+@media(max-width:1150px){
+
+
+
+
+    .div2 input{
+        width: 175px;
+        height: 50px;
+        border-radius: 25px;
+    }
+    .div2 input::placeholder{
+        font-size: 13px;
+    }
+    .div2 button{
+        width: 150px;
+        height: 50px;
+        border-radius: 25px;
+        font-size: 13px;
+
+    }
+    .div1{
+        width: 450px;
+        gap: 20px;
+    }
+
+    .div1 h1{
+    font-weight: 700;
+    font-size: 50px;
+    }
+
+    .div1 p{
+        font-size: 16px;
+        font-weight: 400;
+
+    }
+
+
+
+}
+
+@media(max-width:1000px){
+    header{
+        padding: 30px 0px;
+    }
+    header nav, header button{
+        display: none;
+    }
+
+    header img{
+        display: block;
+        height: 40px;
+    }
+    .sec1{
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 50px 20px;
+        flex-wrap: wrap;
+    }
+
+    .div1{
+        width: 75%;
+        text-align: center;
+    }
+    .div2{
+        justify-content: center;
+    }
+
+    .sec1 img{
+        width: 450px;
+    }
+    
+
+}
+
+@media(max-width:600px){
+
+    .div1{
+        width: 90%;
+    }
+
+    .div1 h1{
+        font-weight: 500;
+        font-size: 35px;
+    }
+    .sec1 img{
+        width: 300px;
+    }
+
+    .div2 button{
+        font-size: 12px;
+    }
+}
+
+
+@media(max-width:1750px){
+    .sec1{
+        padding: 50px 100px;
+    }
+    header{
+        margin: 0px 100px;
+        
+    }
+
+    
+
+
+
+}
+
+
