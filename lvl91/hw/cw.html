@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Kumbh+Sans:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: "Raleway", sans-serif;
+            height: 100vh;
+
+        }
+        main{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+
+
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0px 100px;
+            padding: 20px 0px;
+            border-bottom: 1px solid #A8A8A8;
+        }
+
+        nav{
+            display: flex;
+            align-items: center;
+            
+        }
+        nav ul{
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+        }
+        nav ul li{
+            list-style-type: none;
+            font-weight: 400;
+        }
+        header h2{
+            font-weight: 700;
+            font-style: bold;
+            font-size: 20px;
+        }
+        button{
+            font-weight: 700;
+            font-size: 16px;
+            background-color: #FFCE31;
+            height: 40px;
+            width: 150px;
+            border: none;
+            border-radius: 20px;
+        }
+        header img{
+            display: none;
+        
+        }
+
+        .sec1{
+            display: flex;
+            padding: 100px 100px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .sec1 img{
+            width: 600px;
+            margin-left: 30px;
+            margin-top: 40px;
+        }
+
+        .div1{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            width: 500px;
+            gap: 40px;
+
+        }
+
+        .div1 h1{
+            font-weight: 700;
+            font-size:64px;
+            
+        }
+        .div1 p{
+            font-weight: 400;
+        }
+
+        .div2{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+            gap: 40px;
+        }
+
+        .div2 input{
+            width: 300px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #F5F5F5;
+            outline: none;
+            border: none;
+            padding: 0px 40px;
+        }
+
+        .div2 button{
+
+            width: 170px;
+            height: 50px;
+            border-radius: 25px;
+
+        }
+
+        .div2 input::placeholder {
+            font-weight: 400;
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        .sec2{
+            padding: 0px 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #A8A8A8;
+            
+        }
+        .div4{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 604px;
+            flex-wrap: wrap;
+        }
+        .div4 img{
+            width: 100px;
+            margin: 5px;
+        }
+        .div3{
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            align-items: center;
+            width: 300px;
+            justify-content: space-between;
+        }
+        .div5{
+            position: relative;
+        }
+        .im{
+            position: absolute;
+        }
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+        @media (max-width :900px){
+            header{
+                margin: 0px 50px;
+            }
+
+            header button{
+                width: 120px;
+            }
+
+            header nav ul{
+                gap: 25px;
+            }
+
+            .sec1{
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 20px;
+            }
+
+            .sec1 img{
+                margin-left: 0px;
+                width: 400px;
+
+
+            }
+            .div1{
+                justify-content: center;
+                text-align: center;
+            }
+            .div2{
+                justify-content: center;
+            }
+
+            .sec2{
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+            }
+            .div4 img{
+                margin: 10px;
+            }
+
+            .div4{
+                align-items: center;
+                justify-content: center;
+            }
+            
+
+        }
+
+
+
+
+
+
+
+        @media (max-width :650px){
+            header nav{
+                display: none;
+            }
+            header button{
+                display: none;
+            }
+            header img{
+                display: block;
+                width: 30px;
+            }
+            .div1 h1{
+                font-size: 40px;
+            }
+            .div2 input{
+                width: 250px;
+            }
+            .div2 button{
+                width: 120px;
+                font-size: 14px;
+            }
+            .sec1 img{
+                width: 250px;
+            }
+
+            .div2{
+                flex-direction: column;
+                gap: 15px;
+            }
+            .div3{
+                
+                flex-direction: column;
+                text-align: center;
+            }
+            .div5{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .im{
+                display: none;
+            }
+            
+
+              
+        }
+
+        @media(max-width:450px){
+            .div1 h1{
+                font-size: 30px;
+            }
+            .div1 p{
+                font-size: 12px;
+            }
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+        <header>
+        <h2>Verbalizelt</h2>
+        <nav>
+            <ul>
+                <li>service</li>
+                <li>blog</li>
+                <li>about us</li>
+                <li>contact</li>
+            </ul>
+        </nav>
+
+        <button>Register</button>
+
+        <img src="burger-bar.png" alt="">
+    </header>
+
+
+    <main>
+        <section class="sec1">
+            <div class="div1">
+                <h1>We make you learn language easily!</h1>
+                <p>We help you learn language easily, witjh small lessons , you`ll earn points and unlock new levels while improving you rel world communications</p>
+                <div class="div2">
+                    <input type="email" placeholder="Enter Your Email">
+                    <button>Get Started</button>
+                </div>
+            </div>
+
+            <img src="mobile.png" alt="">
+
+        </section>
+
+        <section class="sec2">
+
+
+            <div class="div3">
+
+                <div class="div5">
+                    <img src="Ellipse 252.png"  class="im"alt="">
+                    <img src="Ellipse 248.png" style=" left: 30px;" class="im" alt="">
+                    <img src="Ellipse 251.png" style=" left: 60px;" class="im"alt="">
+                    <img src="Ellipse 250.png" style=" left: 90px;" class="im"alt="">
+                    <img src="Group 464.png" style=" left: 120px;"  alt=""  >
+                   </div>
+                <p>Students Inroll</p>
+
+            </div>
+
+            <div class="div4">
+                <img src="Component 50.png" alt="">
+                <img src="spotify-seeklogo.com 2.png" alt="">
+                <img src="Component 51.png" alt="">
+                <img src="zoom-seeklogo.com-1.png" alt="">
+
+            </div>
+        </section>
+    </main>
+
+    
+</body>
+</html>

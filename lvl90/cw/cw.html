@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Kumbh+Sans:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: "Space Grotesk", sans-serif;
+
+        }
+        header{
+            background-color: black;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+            
+            padding: 10px 80px;
+        }
+
+        header h2{
+            color: #5846FB;
+            font-weight: 500;
+            font-size: 24px;
+            
+            
+        }
+
+        header nav{
+            background-color: white;
+            height: 60px;
+            width: auto;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            margin: 0 22.5%;
+
+
+        }
+        nav ul{
+            display: flex;
+            align-items: center;
+            gap: 30px
+        }
+ 
+        header nav ul li{
+            list-style-type: none;
+            font-weight: 400;
+            font-size: 16px;
+        }
+        header nav img{
+            display: none;
+        }
+        .sec1{
+            display: flex;
+            background-color: black;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+            padding: 150px 80px;
+        }
+        .sec1 h2{
+            font-weight: 500;
+            font-size: 100px;
+            color: white;
+            width: 79%;
+        }
+        .sec1 p{
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            width: 26.5%;
+        }
+
+        .sec1 button{
+            height: 50px;
+            border-radius: 25px;
+            width: 240px;
+            background-color: #5846FB;
+            font-weight: 500;
+            font-size: 16px;
+            color: white;
+            border: none;
+
+            
+        }
+
+        .sec2{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+        .sec2{
+            text-align: left;
+        }
+        .sec2 p{
+            font-weight: 500;
+            font-size: 20px;
+        }
+
+
+
+
+
+        .sec2 div ul{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            flex-wrap: wrap;
+
+        }
+        .sec2 div ul li{
+            background-color: #1F2123;
+            border-radius: 50px;
+
+        }
+        .div2{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-self: left;
+            width: auto;
+            gap: 5px;
+            height: 80px;
+            padding: 50px 20px;
+        }
+        .div2 img{
+             height: 36px;
+        }
+        .div2 p{
+            font-size: 14px;
+            width: 145px;
+        }
+
+        
+        .section-2 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 150px;
+        gap: 75px;
+        }
+
+        .section-2 h1 {
+        font-size: 60px;
+        font-weight: 700;
+        max-width: 600px;
+        text-align: center;
+        }
+
+        .section-2 .conteiners {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        }
+
+        .section-2 .conteiners .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        padding: 45px;
+        background-color: #f0f0f0;
+        max-width: 400px;
+        height: 500px;
+        border-radius: 30px;
+        }
+
+        .section-2 .conteiners .box div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        }
+
+        .section-2 .conteiners .box div h2 {
+        font-size: 45px;
+        font-weight: 400;
+        }
+
+        .section-2 .conteiners .box div a {
+        text-decoration: none;
+        color: #5846fb;
+        }
+
+        .section-2 .last{
+        color: #000;
+        font-size: 20px;
+        }
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+        @media (max-width : 1120px) {
+            header{
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0px;
+                
+            }
+            header nav{
+                margin: 0 0;
+
+            }
+            .sec1 h2{
+                font-size: 70px;
+            }
+            .sec1 p{
+                width: 300px;
+            }
+            
+            
+        }
+        @media (max-width : 700px) {
+            .sec1{
+                padding: 100px 80px;
+            }
+
+            .sec1 h2{
+                
+                font-size: 40px;
+            }
+            header nav{
+                height: 50px;
+            }
+            header nav ul{
+                display: none;
+            }
+            header nav img{
+                display: block;
+                width: 40px;
+            }
+        }
+        @media (max-width : 450px) {
+            header{
+                padding: 10px 30px;
+            }
+            .sec1{
+                padding: 70px 80px;
+            }
+
+            .sec1 h2{
+                
+                font-size: 25px;
+            }
+            .sec2{
+                text-align: center;
+                justify-content: center;
+            }
+            
+            .sec2 div ul{
+                justify-content: center;
+                width: 350px;
+            }
+
+
+            .div2 img{
+                 height: 15px;
+            }
+            .div2 {
+                text-align: center;
+                width: 80%;            
+            }
+            .sec2 div ul li{
+                width: 60%;
+            }
+
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2>CoinFusion</h2>
+
+
+        <nav>
+            <ul>
+                <li style="margin-left: 100px;">Learn</li>
+                <li>Build</li>
+                <li>Explore</li>
+                <li>Join</li>
+                <li style="margin-right: 100px;">Help</li>
+            </ul>
+            <img src="burger-bar.png" alt="">
+        </nav>
+    </header>
+    
+
+    <main>
+        <section class="sec1">
+            <h2>Unleash Bitcoin full potential
+            </h2>
+            <p>Stacks enables DeFi, NFTs, apps, and smart contracts for bitcoin</p>
+            <button>
+                See whats built on stock
+            </button>
+
+            <section class="sec2">
+                
+                <p class="p1">Latest Ecosystem news</p>
+                
+
+                <div>
+                    <ul>
+                        <li><div class="div2">
+                            <img src="Vector.png" alt=""> <p>Alex rasises $8.6M to bring Defi to the...</p>
+                        </div></li>
+                        <li><div class="div2">
+                            <img src="Vector (1).png" alt=""><p>Nyc get own cryptocurrancy after</p>
+                        </div></li>
+                        <li><div class="div2">
+                            <img src="Vector (2).png" alt=""><p>Alex rasises $8.6M to bring Defi to the...</p>
+                        </div></li>
+                        <li><div class="div2">
+                            <img src="Component 128.png" alt=""><p>Alex rasises $8.6M to bring Defi to the...</p>
+                        </div></li>
+
+                    </ul>
+                </div>
+            </section>
+        </section>
+
+
+                <section class="section-2">
+            <h1>Stacks unleashed
+                Bitcoin</h1>
+
+            <div class="conteiners">
+
+                <div class="box">
+                    <img src="img/Screenshot 2025-08-12 232754.png" alt="">
+                    <div>
+                        <h2>Proof of
+                            transfer</h2>
+                        <p>The consensus mechanism that
+                            connects stacks and bitcoin.</p>
+                        <a href="">Learn more</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="img/Screenshot 2025-08-12 232800.png" alt="">
+                    <div>
+                        <h2>Bitcoin to
+                            NFTs</h2>
+                        <p>NFTs is secured by bitcoin by exploding
+                            on the network</p>
+                        <a href="">Learn more</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="img/image.png" alt="">
+                    <div>
+                        <h2>Bitcoin to
+                            DeFi</h2>
+                        <p>Stacks bring DeFi to bitcoin, unlocking
+                            over $2 trillion in capital.</p>
+                        <a href="">Learn more</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <a class="last" href="">See all features</a>
+        </section>
+    </main>
+</body>
+</html>
