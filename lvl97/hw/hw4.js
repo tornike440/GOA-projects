@@ -3,32 +3,26 @@
 //let name = "goga"
 //console.log(name) --> გამოგვიტანს კონსოლში name ცვლადში შენახულ მნიშვნელობას ანუ "goga" - ს
 
-let userName = "tornike";
-let surename = "beridze";
-let contry = "tbilisi";
+let var1 = "Hello"; // string
+let var2 = "World";
+let var3 = "JavaScript";
 
-let age = 16;
-let year = 2008;
-let dey = 20;
+let num1 = 42;
+let num2 = 3.14159;
+let num3 = 69;
 
-let hesPc = true;
-let hesPhone = true;
-let hesGitHub = true;
+let bool1 = true;
+let bool2 = false;
+let bool3 = true;
 
-console.log(userName);
-console.log(surename);
-console.log(contry);
+console.log(var1);
+console.log(var2);
+console.log(var3);
 
-console.log(age);
-console.log(year);
-console.log(dey);
+console.log(num1);
+console.log(num2);
+console.log(num3);
 
-console.log(hesPc);
-console.log(hesPhone);
-console.log(hesGitHub);
-
-// ---------------
-
-console.log("");
-console.log("-----------");
-console.log("");
+console.log(bool1);
+console.log(bool2);
+console.log(bool3);

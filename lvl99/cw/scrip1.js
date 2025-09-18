@@ -42,7 +42,7 @@ if (b > c) {
     for (let i = c; i <= b; i++) {
     console.log(i)
     }
-}elif (c > b) {
+} else if (c > b) {
     for (let i = b; i <= c; i++) {
     console.log(i)
     }

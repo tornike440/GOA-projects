@@ -3,12 +3,27 @@
 // str
 // number
 // bool
-// arr
 
-let userName2 = "nika";
-let age2 = 16;
+
+// string
+// can take any text value, surrounded by quotes
+let userName2 = "string";
+
+// number
+// can take any numeric value, no quotes
+
+let age2 = 98765;
+
+
+// boolean
+// can take true/false values, no quotes
+
+let bool2 = false;
+
+
 let bool = true;
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
 
 console.log(userName2);
 console.log(age2);
