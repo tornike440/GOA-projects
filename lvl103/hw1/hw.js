@@ -8,7 +8,8 @@ function sumArray(arr) {
 }
 
 function countEvenOdd(arr) {
-  let even = 0, odd = 0;
+  let even = 0;
+  let odd = 0;
   for (let num of arr) {
     if (num % 2 === 0) {
       even++;
@@ -93,8 +94,17 @@ function replaceStringsWithTrue(arr) {
     }
   }
   return arr;
+
+
+
+
 }
 
 
+let list=["string","string","string","string","string","string","string","string","string","string",]
 
 
+list.pop()
+list.push("taxi")
+list.shift()
+list.unshift("iremi")
