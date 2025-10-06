@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs - Goa Academy</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: rgba(20,20,20,0.95);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #22c55e;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #22c55e;
+      background-color: rgba(34,197,94,0.1);
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: #22c55e;
+      color: black;
+    }
+
+    .btn-primary:hover {
+      background-color: #16a34a;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(34,197,94,0.3);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid #22c55e;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(34,197,94,0.1);
+      transform: translateY(-3px);
+    }
+
+    /* Hamburger */
+    .menu-toggle {
+      display: none;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .hamburger:hover span {
+      background-color: #22c55e;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgb(0, 0, 0);
+      background-image: url(asfalt-light.png);
+      padding: 80px 10%;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-content .highlight {
+      color: #22c55e;
+    }
+
+    .hero-content p {
+      margin: 20px 0;
+      color: #ccc;
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 16px;
+    }
+
+    /* Programs */
+    .programs {
+      padding: 80px 10%;
+      background-color: rgba(15,15,15,0.95);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+    }
+
+    .section-header p {
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+      gap: 30px;
+    }
+
+    .program-card {
+      background-color: rgba(30,30,30,0.7);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(34,197,94,0.1);
+      transition: all 0.3s;
+    }
+
+    .program-card:hover {
+      background-color: rgba(40,40,40,0.9);
+      transform: translateY(-5px);
+      border-color: rgba(34,197,94,0.3);
+    }
+
+    .program-icon {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(34,197,94,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: #22c55e;
+      font-size: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .program-card:hover .program-icon {
+      background-color: rgba(34,197,94,0.2);
+      transform: scale(1.1);
+    }
+
+    .program-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .program-card p {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .program-details {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    .program-details span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Curriculum */
+    .curriculum {
+      padding: 80px 10%;
+      background-color: rgba(20,20,20,0.95);
+    }
+
+    .curriculum-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tab-btn {
+      padding: 12px 24px;
+      background-color: rgba(30,30,30,0.7);
+      border: 1px solid rgba(34,197,94,0.1);
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .tab-btn.active {
+      background-color: rgba(34,197,94,0.2);
+      border-color: rgba(34,197,94,0.5);
+    }
+
+    .tab-btn:hover:not(.active) {
+      background-color: rgba(40,40,40,0.9);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .module {
+      background-color: rgba(30,30,30,0.7);
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(34,197,94,0.1);
+    }
+
+    .module h4 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #22c55e;
+    }
+
+    .module ul {
+      color: #ccc;
+      padding-left: 20px;
+    }
+
+    .module li {
+      margin-bottom: 8px;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 100px 10%;
+      background-color: rgba(15,15,15,0.95);
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: rgba(15,15,15,0.95);
+      padding: 60px 10% 30px;
+      color: #ccc;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+      color: #22c55e;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-links li a:hover {
+      color: #22c55e;
+      transform: translateX(5px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 550px) { 
+      .footer-content{ 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center;
+         text-align: center; }
+     } 
+     
+     @media (max-width: 950px) { 
+      .hamburger { 
+        display: flex; 
+      } 
+      .nav-links { 
+        position: absolute;
+         top: 120px; left: 0;
+         right: 0;
+          background-color: rgba(20, 20, 20, 0.95); 
+          flex-direction: column; 
+          align-items: center; 
+          max-height: 0; 
+          overflow: hidden; 
+          transition: max-height 0.3s ease-out; 
+        } 
+        .navbar.btn{ 
+          display: none;
+         } 
+        .menu-toggle:checked ~ .nav-links {
+          max-height: 300px;
+        } 
+        .hero { 
+          flex-direction: column; 
+          text-align: center; 
+        } 
+        .hero-content h1 { 
+          font-size: 2.2rem;
+        } 
+        .buttons { 
+          justify-content: center; 
+        } 
+        .hero-image { 
+          margin-top: 40px;
+         } 
+          
+      }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <div><img style="width:40px;height:40px;background:#22c55e;border-radius:8px;"" src="logo.jpg" alt=""></div>
+      Goa Academy
+    </div>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+      <span></span><span></span><span></span>
+    </label>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="programs.html" style="color:#22c55e;">Programs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="apply.html" class="btn btn-primary">Apply Now</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Our <span class="highlight">Programs</span></h1>
+      <p>Choose from our immersive, project-based programs designed to launch your tech career in just 12 weeks.</p>
+      <div class="buttons">
+        <a href="apply.html" class="btn btn-primary">Apply Now</a>
+        <a href="contact.html" class="btn btn-secondary">Talk to an Advisor</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="/lvl94/hw/img/c07a982a8e3d70b457edd0a5221be137ddc98b4a.png" alt="Programs Image">
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="programs">
+    <div class="section-header">
+      <h2>Choose Your <span class="highlight">Path</span></h2>
+      <p>All programs include career support, mentorship, and hands-on projects</p>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="program-icon">💻</div>
+        <h3>Full-Stack Development</h3>
+        <p>Master both frontend and backend technologies to build complete web applications from scratch.</p>
+        <div class="program-details">
+          <span>⏱️ 12 Weeks</span>
+          <span>💼 Project-Based</span>
+        </div>
+        <a href="apply.html" class="btn btn-primary">Apply Now</a>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">🎨</div>
+        <h3>Frontend Development</h3>
+        <p>Specialize in creating beautiful, responsive user interfaces with modern frameworks and tools.</p>
+        <div class="program-details">
+          <span>⏱️ 10 Weeks</span>
+          <span>💼 Project-Based</span>
+        </div>
+        <a href="apply.html" class="btn btn-primary">Apply Now</a>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">⚙️</div>
+        <h3>Backend Development</h3>
+        <p>Focus on server-side development, databases, APIs, and system architecture.</p>
+        <div class="program-details">
+          <span>⏱️ 10 Weeks</span>
+          <span>💼 Project-Based</span>
+        </div>
+        <a href="apply.html" class="btn btn-primary">Apply Now</a>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">📊</div>
+        <h3>Data Science</h3>
+        <p>Learn to extract insights from data using Python, machine learning, and statistical analysis.</p>
+        <div class="program-details">
+          <span>⏱️ 14 Weeks</span>
+          <span>💼 Project-Based</span>
+        </div>
+        <a href="apply.html" class="btn btn-primary">Apply Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum Section -->
+  <section class="curriculum">
+    <div class="section-header">
+      <h2>Curriculum <span class="highlight">Overview</span></h2>
+      <p>Our comprehensive curriculum is designed to make you job-ready</p>
+    </div>
+    
+    <div class="curriculum-tabs">
+      <button class="tab-btn active" data-tab="fullstack">Full-Stack</button>
+      <button class="tab-btn" data-tab="frontend">Frontend</button>
+      <button class="tab-btn" data-tab="backend">Backend</button>
+      <button class="tab-btn" data-tab="datascience">Data Science</button>
+    </div>
+    
+    <div id="fullstack" class="tab-content active">
+      <div class="module">
+        <h4>Weeks 1-4: Foundations</h4>
+        <ul>
+          <li>HTML5, CSS3, JavaScript ES6+</li>
+          <li>Git, GitHub, and development workflow</li>
+          <li>Responsive design and accessibility</li>
+          <li>Building your first web applications</li>
+        </ul>
+      </div>
+      <div class="module">
+        <h4>Weeks 5-8: Frontend Development</h4>
+        <ul>
+          <li>React.js and component-based architecture</li>
+          <li>State management with Redux</li>
+          <li>API integration and asynchronous JavaScript</li>
+          <li>Testing and debugging</li>
+        </ul>
+      </div>
+      <div class="module">
+        <h4>Weeks 9-12: Backend Development</h4>
+        <ul>
+          <li>Node.js and Express.js</li>
+          <li>Database design with MongoDB and SQL</li>
+          <li>RESTful API development</li>
+          <li>Authentication and security</li>
+          <li>Deployment and DevOps basics</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="frontend" class="tab-content">
+      <div class="module">
+        <h4>Weeks 1-4: Core Frontend Technologies</h4>
+        <ul>
+          <li>Advanced HTML5 and semantic markup</li>
+          <li>CSS3, Flexbox, Grid, and animations</li>
+          <li>JavaScript fundamentals and DOM manipulation</li>
+          <li>Responsive design principles</li>
+        </ul>
+      </div>
+      <div class="module">
+        <h4>Weeks 5-7: Modern Frameworks</h4>
+        <ul>
+          <li>React.js fundamentals and hooks</li>
+          <li>Component architecture and props</li>
+          <li>State management and context API</li>
+          <li>React Router for SPA development</li>
+        </ul>
+      </div>
+      <div class="module">
+        <h4>Weeks 8-10: Advanced Frontend</h4>
+        <ul>
+          <li>TypeScript for scalable applications</li>
+          <li>Testing with Jest and React Testing Library</li>
+          <li>Performance optimization techniques</li>
+          <li>Accessibility (a11y) best practices</li>
+          <li>Build tools and deployment</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="backend" class="tab-content">
+      <div class="module">
+        <h4>Weeks 1-4: Backend Fundamentals</h4>
+        <ul>
+          <li>Node.js runtime and module system</li>
+          <li>Express.js framework and middleware</li>
+          <li>RESTful API design principles</li>
+          <li>Authentication with JWT and OAuth</li>
+        </ul>
+      </div>
+      <div class="module">
+        <h4>Weeks 5-7: Databases and Data Modeling</h4>
+        <ul>
+          <li>SQL databases (PostgreSQL) and ORMs</li>
+          <li>NoSQL databases (MongoDB) and ODMs</li>
+          <li>Database design and normalization</li>
+          <li>Query optimization and indexing</li>
+        </ul>
+      </div>
+      <div class="module">
+        <h4>Weeks 8-10: Advanced Backend</h4>
+        <ul>
+          <li>Microservices architecture</li>
+          <li>Message queues and background jobs</li>
+          <li>Caching strategies with Redis</li>
+          <li>API security and best practices</li>
+          <li>Containerization with Docker</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="datascience" class="tab-content">
+      <div class="module">
+        <h4>Weeks 1-5: Data Fundamentals</h4>
+        <ul>
+          <li>Python for data science (NumPy, Pandas)</li>
+          <li>Data cleaning and preprocessing</li>
+          <li>Exploratory data analysis and visualization</li>
+          <li>Statistical analysis and hypothesis testing</li>
+        </ul>
+      </div>
+      <div class="module">
+        <h4>Weeks 6-10: Machine Learning</h4>
+        <ul>
+          <li>Supervised learning algorithms</li>
+          <li>Unsupervised learning and clustering</li>
+          <li>Model evaluation and validation</li>
+          <li>Feature engineering and selection</li>
+        </ul>
+      </div>
+      <div class="module">
+        <h4>Weeks 11-14: Advanced Topics</h4>
+        <ul>
+          <li>Deep learning with TensorFlow/Keras</li>
+          <li>Natural language processing</li>
+          <li>Time series analysis and forecasting</li>
+          <li>Big data tools and cloud platforms</li>
+          <li>Deploying machine learning models</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to <span class="highlight">Start Learning?</span></h2>
+    <p>Join our next cohort and transform your career in just 12 weeks.</p>
+    <a href="apply.html" class="btn btn-primary">Apply for a Program</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Goa Academy</h3>
+        <p>Transforming beginners into job-ready software engineers.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Programs</h3>
+        <ul class="footer-links">
+          <li><a href="programs.html">Full-Stack Development</a></li>
+          <li><a href="programs.html">Frontend Development</a></li>
+          <li><a href="programs.html">Backend Development</a></li>
+          <li><a href="programs.html">Data Science</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Success Stories</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="contact.html">Admissions</a></li>
+          <li><a href="contact.html">Support</a></li>
+          <li><a href="contact.html">Partnerships</a></li>
+          <li><a href="contact.html">Visit Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Goa Academy. All rights reserved.
+    </div>
+  </footer>
+
+
+
+</body>
+</html>

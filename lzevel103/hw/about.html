@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Goa Academy - Software Engineering Bootcamp</title>
+  <title>About Us - Goa Academy</title>
   <style>
     body {
       margin: 0;
@@ -152,42 +152,8 @@
       border-radius: 16px;
     }
 
-    /* Stats */
-    .stats {
-      background-color: rgba(255,255,255,0.95);
-      background-image: url(arches.png);
-      color: black;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      text-align: center;
-      padding: 80px 10%;
-    }
-
-    .stat {
-      padding: 30px 20px;
-      border-radius: 12px;
-      background-color: rgba(255,255,255,0.8);
-      transition: all 0.3s;
-    }
-
-    .stat:hover {
-      background-color: white;
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    .stat h2 {
-      font-size: 2.5rem;
-      color: #22c55e;
-    }
-
-    .stat p {
-      color: #555;
-    }
-
-    /* Features */
-    .features {
+    /* About Content */
+    .about-content {
       padding: 80px 10%;
       background-color: rgba(15,15,15,0.95);
     }
@@ -207,13 +173,14 @@
       margin: 0 auto;
     }
 
-    .features-grid {
+    .about-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
       gap: 30px;
+      margin-bottom: 60px;
     }
 
-    .feature-card {
+    .about-card {
       background-color: rgba(30,30,30,0.7);
       padding: 30px;
       border-radius: 12px;
@@ -221,13 +188,13 @@
       transition: all 0.3s;
     }
 
-    .feature-card:hover {
+    .about-card:hover {
       background-color: rgba(40,40,40,0.9);
       transform: translateY(-5px);
       border-color: rgba(34,197,94,0.3);
     }
 
-    .feature-icon {
+    .about-icon {
       width: 60px;
       height: 60px;
       background-color: rgba(34,197,94,0.1);
@@ -241,25 +208,95 @@
       transition: all 0.3s;
     }
 
-    .feature-card:hover .feature-icon {
+    .about-card:hover .about-icon {
       background-color: rgba(34,197,94,0.2);
       transform: scale(1.1);
     }
 
-    .feature-card h3 {
+    .about-card h3 {
       font-size: 1.5rem;
       margin-bottom: 15px;
     }
 
-    .feature-card p {
+    .about-card p {
       color: #ccc;
+    }
+
+    .mission-vision {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .mission, .vision {
+      background-color: rgba(30,30,30,0.7);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(34,197,94,0.1);
+    }
+
+    .mission h3, .vision h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #22c55e;
+    }
+
+    /* Team */
+    .team {
+      padding: 80px 10%;
+      background-color: rgba(20,20,20,0.95);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 30px;
+    }
+
+    .team-member {
+      background-color: rgba(30,30,30,0.7);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(34,197,94,0.1);
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .team-member:hover {
+      background-color: rgba(40,40,40,0.9);
+      transform: translateY(-5px);
+      border-color: rgba(34,197,94,0.3);
+    }
+
+    .member-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      background-color: rgba(34,197,94,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #22c55e;
+      font-size: 2rem;
+    }
+
+    .team-member h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .team-member p {
+      color: #ccc;
+      margin-bottom: 15px;
     }
 
     /* CTA */
     .cta {
       text-align: center;
       padding: 100px 10%;
-      background-color: rgba(20,20,20,0.95);
+      background-color: rgba(51, 51, 51, 0.95);
     }
 
     .cta h2 {
@@ -320,7 +357,6 @@
       font-size: 0.9rem;
     }
 
-
     @media (max-width: 550px) { 
       .footer-content{ 
         display: flex; 
@@ -365,8 +401,6 @@
          } 
           
       }
-
-    
   </style>
 </head>
 <body>
@@ -382,76 +416,104 @@
       <span></span><span></span><span></span>
     </label>
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Programs</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="about.html" style="color:#22c55e;">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="#" class="btn btn-primary">Apply Now</a>
+    <a href="apply.html" class="btn btn-primary">Apply Now</a>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Become a <span class="highlight">Software Engineer</span></h1>
-      <p>Learn coding through immersive, project-based training. No fluff — just skills that land you jobs.</p>
+      <h1>About <span class="highlight">Goa Academy</span></h1>
+      <p>We're on a mission to transform beginners into job-ready software engineers through immersive, project-based learning.</p>
       <div class="buttons">
-        <a href="#" class="btn btn-primary">Apply Now</a>
-        <a href="#" class="btn btn-secondary">Learn More</a>
+        <a href="apply.html" class="btn btn-primary">Apply Now</a>
+        <a href="programs.html" class="btn btn-secondary">Our Programs</a>
       </div>
     </div>
     <div class="hero-image">
-      <img src="use.jpg" alt="Hero Image">
+      <img src="/lvl88/hw/mobile.png" alt="About Image">
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section class="stats">
-    <div class="stat"><h2>95%</h2><p>Job Placement Rate</p></div>
-    <div class="stat"><h2>30+</h2><p>Hiring Partners</p></div>
-    <div class="stat"><h2>12 Weeks</h2><p>Intensive Training</p></div>
-    <div class="stat"><h2>1000+</h2><p>Graduates</p></div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features">
+  <!-- About Content -->
+  <section class="about-content">
     <div class="section-header">
-      <h2>Why Choose <span class="highlight">Goa Academy</span></h2>
-      <p>We provide the most effective path to becoming a software engineer</p>
+      <h2>Our <span class="highlight">Story</span></h2>
+      <p>Founded in 2020, Goa Academy has helped thousands of students launch successful tech careers</p>
     </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon"><img src="computer.png" alt=""></div>
-        <h3>Project-Based Learning</h3>
-        <p>Build real-world applications from day one.</p>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-icon">🚀</div>
+        <h3>Our Mission</h3>
+        <p>To democratize tech education and make high-quality software engineering training accessible to everyone, regardless of background.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><img src="expert.png" alt=""></div>
-        <h3>Expert Instructors</h3>
-        <p>Learn from industry professionals with experience.</p>
+      <div class="about-card">
+        <div class="about-icon">🎯</div>
+        <h3>Our Approach</h3>
+        <p>We focus on practical, project-based learning that mirrors real-world development environments and challenges.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><img src="career.png" alt=""></div>
-        <h3>Career Support</h3>
-        <p>Get personalized career coaching and connections.</p>
-      </div>
-      
-
-      <div class="feature-card">
-        <div class="feature-icon">🌐</div>
-        <h3>Online Studying</h3>
-        <p>Learn from anywhere with our fully online curriculum, interactive sessions, and virtual projects.</p>
+      <div class="about-card">
+        <div class="about-icon">💡</div>
+        <h3>Our Values</h3>
+        <p>Excellence, community, innovation, and impact drive everything we do at Goa Academy.</p>
       </div>
     </div>
+    
+    <div class="mission-vision">
+      <div class="mission">
+        <h3>Our Mission</h3>
+        <p>To transform the tech education landscape by providing immersive, accessible, and effective training that prepares students for high-demand software engineering roles. We believe that talent is everywhere, but opportunity is not, and we're committed to bridging that gap.</p>
+      </div>
+      <div class="vision">
+        <h3>Our Vision</h3>
+        <p>To become the world's most effective pathway for aspiring developers to launch rewarding tech careers. We envision a future where anyone with dedication and drive can access the education needed to succeed in the digital economy.</p>
+      </div>
+    </div>
+  </section>
 
-
+  <!-- Team Section -->
+  <section class="team">
+    <div class="section-header">
+      <h2>Meet Our <span class="highlight">Team</span></h2>
+      <p>Industry experts dedicated to your success</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="member-photo">👨‍💼</div>
+        <h3>Alex Johnson</h3>
+        <p>Founder & CEO</p>
+        <p>Former Senior Engineer at Google with 10+ years of experience.</p>
+      </div>
+      <div class="team-member">
+        <div class="member-photo">👩‍💻</div>
+        <h3>Sarah Chen</h3>
+        <p>Head of Education</p>
+        <p>Full-stack developer and curriculum designer with 8 years of experience.</p>
+      </div>
+      <div class="team-member">
+        <div class="member-photo">👨‍🏫</div>
+        <h3>Michael Rodriguez</h3>
+        <p>Lead Instructor</p>
+        <p>Specializes in backend development and system architecture.</p>
+      </div>
+      <div class="team-member">
+        <div class="member-photo">👩‍🎓</div>
+        <h3>Emily Watson</h3>
+        <p>Career Coach</p>
+        <p>Helped 500+ students land their dream tech jobs.</p>
+      </div>
+    </div>
   </section>
 
   <!-- CTA -->
   <section class="cta">
-    <h2>Ready to <span class="highlight">Start Your Journey?</span></h2>
-    <p>Take the first step toward a rewarding career in tech.</p>
-    <a href="#" class="btn btn-primary">Get Started Today</a>
+    <h2>Ready to <span class="highlight">Transform Your Career?</span></h2>
+    <p>Join thousands of successful graduates who've launched tech careers with Goa Academy.</p>
+    <a href="apply.html" class="btn btn-primary">Start Your Journey Today</a>
   </section>
 
   <!-- Footer -->
@@ -464,10 +526,10 @@
       <div class="footer-column">
         <h3>Programs</h3>
         <ul class="footer-links">
-          <li><a href="#">Full-Stack Development</a></li>
-          <li><a href="#">Frontend Development</a></li>
-          <li><a href="#">Backend Development</a></li>
-          <li><a href="#">Data Science</a></li>
+          <li><a href="programs.html">Full-Stack Development</a></li>
+          <li><a href="programs.html">Frontend Development</a></li>
+          <li><a href="programs.html">Backend Development</a></li>
+          <li><a href="programs.html">Data Science</a></li>
         </ul>
       </div>
       <div class="footer-column">
@@ -482,10 +544,10 @@
       <div class="footer-column">
         <h3>Contact</h3>
         <ul class="footer-links">
-          <li><a href="#">Admissions</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Partnerships</a></li>
-          <li><a href="#">Visit Us</a></li>
+          <li><a href="contact.html">Admissions</a></li>
+          <li><a href="contact.html">Support</a></li>
+          <li><a href="contact.html">Partnerships</a></li>
+          <li><a href="contact.html">Visit Us</a></li>
         </ul>
       </div>
     </div>
